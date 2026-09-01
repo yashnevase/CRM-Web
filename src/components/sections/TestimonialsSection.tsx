@@ -13,7 +13,7 @@ export function TestimonialsSection() {
       className="section-space relative overflow-hidden bg-hero-mesh"
       aria-labelledby="testimonials-title"
     >
-      <div className="absolute -left-28 bottom-0 h-80 w-80 rounded-full bg-accent/15 blur-3xl" />
+      <div className="quiet-grid pointer-events-none absolute inset-0 opacity-55" />
       <div className="page-shell relative">
         <motion.div {...inViewProps} variants={fadeUp}>
           <SectionHeading

@@ -5,8 +5,8 @@ export interface StatItem {
 }
 
 export const stats: StatItem[] = [
-  { value: 12, suffix: '+', label: 'Years of thoughtful care' },
-  { value: 8, suffix: 'K+', label: 'Patients supported' },
-  { value: 98, suffix: '%', label: 'Patient satisfaction' },
-  { value: 24, suffix: '/7', label: 'Digital care access' },
+  { value: 10, suffix: '+', label: 'Service categories' },
+  { value: 5, suffix: 'K+', label: 'Care requests mapped' },
+  { value: 98, suffix: '%', label: 'Process visibility goal' },
+  { value: 24, suffix: '/7', label: 'Digital request access' },
 ];

@@ -1,36 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root,
-[data-theme='clinical-blue'] {
-  --color-primary: 11 95 255;
-  --color-primary-dark: 30 58 138;
-  --color-primary-soft: 224 237 255;
-  --color-accent: 15 163 177;
-  --color-accent-strong: 13 148 136;
-  --color-accent-soft: 213 250 246;
-  --color-ink: 15 23 42;
-  --color-muted: 100 116 139;
-  --color-line: 226 232 240;
-  --color-canvas: 245 249 255;
+:root {
+  --color-primary: 10 127 143;
+  --color-primary-dark: 8 107 121;
+  --color-primary-soft: 214 231 241;
+  --color-accent: 255 173 82;
+  --color-accent-strong: 232 153 64;
+  --color-accent-soft: 255 243 230;
+  --color-ink: 17 17 17;
+  --color-muted: 102 112 140;
+  --color-line: 197 197 197;
+  --color-canvas: 240 247 249;
   --color-surface: 255 255 255;
-}
-
-[data-theme='bold-green'] {
-  --color-primary: 18 84 62;
-  --color-primary-dark: 12 59 46;
-  --color-primary-soft: 222 242 232;
-  --color-accent: 244 196 48;
-  --color-accent-strong: 222 166 19;
-  --color-accent-soft: 255 246 204;
-  --color-ink: 15 32 27;
-  --color-muted: 91 111 103;
-  --color-line: 219 231 225;
-  --color-canvas: 248 251 249;
-  --color-surface: 255 255 255;
+  --color-cream: 255 251 245;
 }
 
 @layer base {
@@ -59,10 +45,24 @@
     @apply py-section-mobile md:py-20 lg:py-section;
   }
   .glass {
-    @apply border border-white/50 bg-white/65 shadow-glass backdrop-blur-xl;
+    @apply border border-white/60 bg-white/70 shadow-glass backdrop-blur-2xl;
   }
   .glass-dark {
-    @apply border border-white/15 bg-white/10 shadow-glass backdrop-blur-xl;
+    @apply border border-white/15 bg-white/10 shadow-glass backdrop-blur-2xl;
+  }
+  .mac-glass {
+    @apply border border-white/70 bg-white/60 shadow-glass backdrop-blur-2xl;
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.75),
+      0 24px 70px -35px rgb(var(--color-primary) / 0.42),
+      0 12px 28px -24px rgb(17 17 17 / 0.28);
+  }
+  .quiet-grid {
+    background-image:
+      linear-gradient(rgb(var(--color-primary) / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--color-primary) / 0.07) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: linear-gradient(to bottom, transparent, black 18%, black 78%, transparent);
   }
   .focus-ring {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;

@@ -1,18 +1,24 @@
 export const siteContent = {
-  brand: { name: 'Lumena', descriptor: 'health collective' },
-  common: { book: 'Book appointment', learn: 'Learn more', explore: 'Explore services' },
+  brand: { name: 'LifeMed Connect', descriptor: 'health and insurance, seamlessly connected' },
+  common: {
+    book: 'Book a service',
+    partner: 'Partner with us',
+    talk: 'Talk to us',
+    learn: 'Learn more',
+    explore: 'Explore services',
+  },
   hero: {
-    eyebrow: 'Trusted healthcare partner',
-    title: 'Care that sees the',
-    accent: 'whole you.',
+    eyebrow: 'Health and insurance, connected',
+    title: 'Healthcare access that feels',
+    accent: 'simple and coordinated.',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.',
-    features: ['Same-week visits', 'Personal care plans', 'Digital follow-ups'],
-    secondaryCta: 'Discover our approach',
-    reviews: '1k+ verified reviews',
-    imageAlt: 'Healthcare specialist consulting with a patient in a calm clinic',
+    features: ['Professional network', 'Digital coordination', 'Quality-led operations'],
+    secondaryCta: 'Explore services',
+    reviews: '1k+ coordinated care journeys',
+    imageAlt: 'Digital healthcare coordination dashboard with patient care indicators',
     badges: {
-      score: 'Patient care score',
+      score: 'Service visibility',
       availability: 'Next visit available',
       today: 'Today, 3:30 PM',
     },
@@ -34,22 +40,35 @@ export const siteContent = {
     badge: 'Care, made personal',
   },
   services: {
-    eyebrow: 'Care, connected',
-    title: 'Everything you need to feel your best.',
+    eyebrow: 'Service ecosystem',
+    title: 'Healthcare modules ready for every care journey.',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue.',
     cardLink: 'Read more',
   },
+  programs: {
+    eyebrow: 'Built for every audience',
+    title: 'Individual, corporate and partner journeys in one structure.',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere.',
+  },
   process: {
     eyebrow: 'Simple by design',
-    title: 'A clearer path to better health.',
+    title: 'A clearer path from request to service delivery.',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum.',
   },
   departments: {
-    eyebrow: 'Our departments',
-    title: 'Specialist expertise, one connected team.',
+    eyebrow: 'Healthcare network',
+    title: 'A flexible network model for future partner content.',
     description: 'Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.',
+  },
+  technology: {
+    eyebrow: 'Technology enabled',
+    title: 'A calm operational layer behind complex healthcare delivery.',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor.',
+    tags: ['Request', 'Map', 'Allocate', 'Track', 'Report'],
   },
   team: {
     eyebrow: 'People who listen',
@@ -63,27 +82,27 @@ export const siteContent = {
     description: 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.',
   },
   cta: {
-    eyebrow: 'Your wellbeing starts here',
-    title: 'Ready for care that fits your life?',
+    eyebrow: 'Lead-ready skeleton',
+    title: 'Every important action has a clear path to enquiry.',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Start with a simple conversation.',
   },
   newsletter: {
-    eyebrow: 'The Lumena letter',
+    eyebrow: 'The LifeMed update',
     title: 'Useful health notes, once a month.',
     placeholder: 'Email address',
     button: 'Join the list',
   },
   footer: {
     blurb:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Thoughtful care for modern life.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Connected care for modern healthcare journeys.',
     headings: { company: 'Company', services: 'Services', contact: 'Contact' },
-    contact: ['hello@lumena.example', '+1 (555) 014-2210', '120 Wellness Avenue'],
-    copyright: '© 2026 Lumena Health. Template content for demonstration only.',
+    contact: ['hello@lifemed.example', '+91 00000 00000', 'Mumbai, India'],
+    copyright: '(c) 2026 LifeMed Connect. Template content for demonstration only.',
   },
   pages: {
     about: {
-      eyebrow: 'About Lumena',
+      eyebrow: 'About LifeMed Connect',
       title: 'A new standard for everyday care.',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
@@ -96,7 +115,7 @@ export const siteContent = {
     },
     contact: {
       eyebrow: 'Contact us',
-      title: 'Let’s begin with a conversation.',
+      title: "Let's begin with a conversation.",
       description:
         'Aenean lacinia bibendum nulla sed consectetur. Tell us how we can help and our care team will be in touch.',
     },

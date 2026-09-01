@@ -5,9 +5,7 @@ export function NewsletterFooter() {
   return (
     <div className="glass-dark grid gap-7 rounded-3xl p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end">
       <div>
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">
-          {siteContent.newsletter.eyebrow}
-        </p>
+        <p className="text-xs font-bold text-accent">{siteContent.newsletter.eyebrow}</p>
         <h2 className="mt-3 max-w-xl text-2xl font-bold text-white sm:text-3xl">
           {siteContent.newsletter.title}
         </h2>

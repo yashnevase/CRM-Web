@@ -1,4 +1,4 @@
-# Lumena Medical & Wellness React Template
+# LifeMed Connect React Template
 
 A clean React template for medical, clinic, diagnostics, dental, chiropractic, and wellness websites. It uses React, Vite, TypeScript, Tailwind CSS, Framer Motion, and local mock data.
 
@@ -32,17 +32,17 @@ Most day-to-day changes live in `src/data`:
 
 Page layout lives in `src/pages/Home.tsx`. You can reorder or remove sections there without changing the section components.
 
-## Theme
+## Brand Palette
 
-The default theme is the soft blue medical theme. A bold green theme is also included.
+The project uses one fixed LifeMed Connect palette:
 
-To change the default theme, edit `src/lib/theme.ts`:
+- Primary teal: `#0A7F8F` and `#089BAB`
+- Soft blue: `#D6E7F1`
+- Warm accent: `#FFAD52` and `#E89940`
+- Cream surfaces: `#FFF3E6` and `#FFFBF5`
+- Neutral text and borders: `#111111`, `#8A96BC`, `#C5C5C5`, `#F7F8F8`
 
-```ts
-export const defaultTheme: ThemeName = themes.bold;
-```
-
-Theme colors are defined as CSS variables in `src/styles/globals.css`. Tailwind maps those variables in `tailwind.config.ts`, so components use readable classes like `bg-primary`, `text-muted`, and `shadow-glass`.
+Theme colors are defined as CSS variables in `src/styles/globals.css`. Tailwind maps those variables in `tailwind.config.ts`, so components use readable classes like `bg-primary`, `text-muted`, `bg-accent`, and `shadow-glass`.
 
 ## Project Structure
 

@@ -24,9 +24,7 @@ export function SectionHeading({
       <Badge dark={dark} icon={<Sparkles className="h-3.5 w-3.5" />}>
         {eyebrow}
       </Badge>
-      <h2 className="mt-5 text-3xl font-bold tracking-[-0.045em] sm:text-4xl lg:text-5xl">
-        {title}
-      </h2>
+      <h2 className="mt-5 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">{title}</h2>
       <p className={cn('mt-5 text-base leading-7', dark ? 'text-white/65' : 'text-muted')}>
         {description}
       </p>

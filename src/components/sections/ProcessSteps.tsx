@@ -18,7 +18,7 @@ export function ProcessSteps() {
       className="section-space relative overflow-hidden bg-deep-gradient"
       aria-labelledby="process-title"
     >
-      <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_20%_20%,white_0,transparent_24%),radial-gradient(circle_at_80%_70%,rgb(var(--color-accent))_0,transparent_28%)]" />
+      <div className="quiet-grid absolute inset-0 opacity-20" />
       <div className="page-shell relative">
         <motion.div {...inViewProps} variants={fadeUp}>
           <SectionHeading

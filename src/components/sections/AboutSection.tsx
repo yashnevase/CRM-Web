@@ -13,7 +13,7 @@ export function AboutSection() {
     <section className="section-space bg-surface" id="about" aria-labelledby="about-title">
       <div className="page-shell grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <motion.div {...inViewProps} variants={fadeUp} className="relative mx-auto w-full max-w-xl">
-          <div className="overflow-hidden rounded-4xl bg-primary-soft p-3 shadow-card">
+          <div className="mac-glass overflow-hidden rounded-4xl p-3">
             <MediaPlaceholder
               label={content.imageAlt}
               className="aspect-[.95] w-full rounded-3xl"
@@ -31,7 +31,7 @@ export function AboutSection() {
             <Badge>{content.eyebrow}</Badge>
             <h2
               id="about-title"
-              className="mt-5 text-3xl font-bold tracking-[-0.045em] sm:text-4xl lg:text-5xl"
+              className="mt-5 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl"
             >
               {content.title}
             </h2>

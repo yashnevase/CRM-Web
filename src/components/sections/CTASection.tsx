@@ -12,10 +12,8 @@ export function CTASection() {
         <motion.div
           {...inViewProps}
           variants={staggerContainer}
-          className="relative overflow-hidden rounded-4xl bg-primary px-6 py-14 text-center text-white shadow-glass sm:px-10 lg:py-20"
+          className="quiet-grid relative overflow-hidden rounded-4xl bg-primary px-6 py-14 text-center text-white shadow-glass sm:px-10 lg:py-20"
         >
-          <div className="absolute -left-12 -top-20 h-64 w-64 rounded-full bg-white/10 blur-2xl" />
-          <div className="absolute -bottom-24 right-0 h-72 w-72 rounded-full bg-accent/25 blur-3xl" />
           <motion.div variants={fadeUp} className="relative">
             <Badge dark icon={<Sparkles className="h-3.5 w-3.5" />}>
               {siteContent.cta.eyebrow}
@@ -23,7 +21,7 @@ export function CTASection() {
           </motion.div>
           <motion.h2
             variants={fadeUp}
-            className="relative mx-auto mt-6 max-w-3xl text-3xl font-bold tracking-[-0.045em] sm:text-4xl lg:text-5xl"
+            className="relative mx-auto mt-6 max-w-3xl text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl"
           >
             {siteContent.cta.title}
           </motion.h2>
@@ -36,7 +34,7 @@ export function CTASection() {
           <motion.div variants={fadeUp} className="relative mt-8">
             <Link
               to="/contact"
-              className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-bold text-primary-dark shadow-card transition duration-500 hover:scale-[1.025]"
+              className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-accent px-6 text-sm font-extrabold text-ink shadow-glow transition duration-500 hover:scale-[1.025]"
             >
               {siteContent.common.book}
               <ArrowUpRight className="h-4 w-4" />

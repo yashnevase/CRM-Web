@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/lifemed-connect-logo.png';
 import { footerNavigation } from '../../data/navigation';
 import { siteContent } from '../../data/site-content';
 import { NewsletterFooter } from './NewsletterFooter';
@@ -11,7 +12,7 @@ export function Footer() {
         <NewsletterFooter />
         <div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <div className="font-display text-2xl font-extrabold">{siteContent.brand.name}</div>
+            <img src={logo} alt="LifeMed Connect" className="h-14 w-auto brightness-110" />
             <p className="mt-4 max-w-sm text-sm leading-6 text-white/60">
               {siteContent.footer.blurb}
             </p>

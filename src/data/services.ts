@@ -1,7 +1,9 @@
+import type { ServiceIconName } from '../components/ui/ServiceIcon';
+
 export interface ServiceItem {
   title: string;
   description: string;
-  icon: 'heart' | 'activity' | 'brain' | 'sparkles' | 'stethoscope' | 'flask';
+  icon: ServiceIconName;
   variant: 'primary' | 'light' | 'image' | 'accent';
   image?: string;
   size: 'wide' | 'standard';
@@ -9,14 +11,14 @@ export interface ServiceItem {
 
 export const services: ServiceItem[] = [
   {
-    title: 'Preventive care',
+    title: 'Preventive health check-ups',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    icon: 'heart',
+    icon: 'clipboard',
     variant: 'primary',
     size: 'wide',
   },
   {
-    title: 'Diagnostics',
+    title: 'Diagnostic services',
     description: 'Praesent commodo cursus magna vel scelerisque nisl.',
     icon: 'flask',
     variant: 'image',
@@ -24,39 +26,39 @@ export const services: ServiceItem[] = [
     size: 'standard',
   },
   {
-    title: 'Whole-body wellness',
+    title: 'Home healthcare',
     description: 'Integer posuere erat a ante venenatis dapibus posuere.',
-    icon: 'sparkles',
+    icon: 'home',
     variant: 'light',
     size: 'standard',
   },
   {
-    title: 'Movement therapy',
+    title: 'Corporate healthcare',
     description: 'Donec ullamcorper nulla non metus auctor fringilla.',
-    icon: 'activity',
+    icon: 'building',
     variant: 'image',
     image: 'https://picsum.photos/seed/lumena-movement/1000/700',
     size: 'wide',
   },
   {
-    title: 'Mental wellbeing',
+    title: 'Occupational health',
     description: 'Aenean lacinia bibendum nulla sed consectetur.',
-    icon: 'brain',
+    icon: 'activity',
     variant: 'accent',
     size: 'wide',
   },
   {
-    title: 'Specialist consults',
+    title: 'Healthcare network',
     description: 'Cras mattis consectetur purus sit amet fermentum.',
-    icon: 'stethoscope',
+    icon: 'network',
     variant: 'light',
     size: 'standard',
   },
 ];
 
 export const departments = [
-  { title: 'General medicine', icon: 'stethoscope' as const },
-  { title: 'Cardiology', icon: 'heart' as const },
-  { title: 'Neurology', icon: 'brain' as const },
-  { title: 'Rehabilitation', icon: 'activity' as const },
+  { title: 'Healthcare professionals', icon: 'users' as const },
+  { title: 'Diagnostic partners', icon: 'flask' as const },
+  { title: 'Hospitals and clinics', icon: 'stethoscope' as const },
+  { title: 'Corporate partners', icon: 'building' as const },
 ];

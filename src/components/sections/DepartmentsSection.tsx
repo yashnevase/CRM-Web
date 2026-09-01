@@ -9,7 +9,7 @@ import { ServiceIcon } from '../ui/ServiceIcon';
 
 export function DepartmentsSection() {
   return (
-    <section className="section-space bg-surface" aria-labelledby="departments-title">
+    <section className="section-space bg-canvas" id="network" aria-labelledby="departments-title">
       <div className="page-shell">
         <motion.div {...inViewProps} variants={fadeUp}>
           <SectionHeading
@@ -30,7 +30,7 @@ export function DepartmentsSection() {
               variants={fadeUp}
               whileHover={{ y: -4 }}
               key={item.title}
-              className="group focus-ring rounded-3xl border border-line/70 bg-canvas p-6 shadow-card transition-shadow hover:shadow-glass"
+              className="mac-glass group focus-ring rounded-3xl p-6 transition duration-500 hover:bg-white/80"
             >
               <div className="flex items-start justify-between">
                 <IconCircle>
