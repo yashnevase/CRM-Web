@@ -9,15 +9,21 @@ import { Services } from './pages/Services';
 
 export default function App() {
   const location = useLocation();
-  useEffect(() => { if (location.hash) document.querySelector(location.hash)?.scrollIntoView({ behavior: 'smooth' }); else window.scrollTo({ top: 0, behavior: 'smooth' }); }, [location]);
-  return <>
-    <Navbar />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
-    <Footer />
-  </>;
+  useEffect(() => {
+    if (location.hash)
+      document.querySelector(location.hash)?.scrollIntoView({ behavior: 'smooth' });
+    else window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location]);
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Footer />
+    </>
+  );
 }

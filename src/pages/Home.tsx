@@ -9,5 +9,17 @@ import { TeamSection } from '../components/sections/TeamSection';
 import { TestimonialsSection } from '../components/sections/TestimonialsSection';
 
 export function Home() {
-  return <main><Hero /><StatsStrip /><AboutSection /><ServicesGrid /><ProcessSteps /><DepartmentsSection /><TeamSection /><TestimonialsSection /><CTASection /></main>;
+  return (
+    <main>
+      <Hero />
+      <StatsStrip />
+      <AboutSection />
+      <ServicesGrid />
+      <ProcessSteps />
+      <DepartmentsSection />
+      <TeamSection />
+      <TestimonialsSection />
+      <CTASection />
+    </main>
+  );
 }

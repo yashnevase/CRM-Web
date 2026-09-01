@@ -2,7 +2,11 @@ import { useEffect, useState } from 'react';
 import { useInViewAnimation } from '../../hooks/useInViewAnimation';
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 
-interface CountUpProps { target: number; suffix?: string; duration?: number }
+interface CountUpProps {
+  target: number;
+  suffix?: string;
+  duration?: number;
+}
 
 export function CountUp({ target, suffix = '', duration = 1400 }: CountUpProps) {
   const { ref, isInView } = useInViewAnimation();
@@ -11,7 +15,10 @@ export function CountUp({ target, suffix = '', duration = 1400 }: CountUpProps) 
 
   useEffect(() => {
     if (!isInView) return;
-    if (reduceMotion) { setValue(target); return; }
+    if (reduceMotion) {
+      setValue(target);
+      return;
+    }
     const start = performance.now();
     let frame = 0;
     const tick = (now: number) => {
@@ -23,5 +30,10 @@ export function CountUp({ target, suffix = '', duration = 1400 }: CountUpProps) 
     return () => cancelAnimationFrame(frame);
   }, [duration, isInView, reduceMotion, target]);
 
-  return <span ref={ref}>{value}{suffix}</span>;
+  return (
+    <span ref={ref}>
+      {value}
+      {suffix}
+    </span>
+  );
 }

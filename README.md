@@ -1,58 +1,58 @@
 # Lumena Medical & Wellness React Template
 
-A reusable, production-ready React scaffold for clinics, hospitals, diagnostics, dental, chiropractic, and wellness brands. The default design uses a soft clinical-blue palette, glass surfaces, organic mesh gradients, bento layouts, and restrained motion. A high-contrast forest-green theme is built in.
+A clean React template for medical, clinic, diagnostics, dental, chiropractic, and wellness websites. It uses React, Vite, TypeScript, Tailwind CSS, Framer Motion, and local mock data.
 
-## Run locally
+## Setup
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-Production checks:
+Useful commands:
 
 ```bash
 pnpm typecheck
 pnpm lint
 pnpm build
+pnpm preview
 ```
 
-## Customize content
+## Where To Edit
 
-All visible section copy is centralized in `src/data/site-content.ts`. Collection content lives beside it:
+Most day-to-day changes live in `src/data`:
 
-- `services.ts` — service and department cards
-- `team.ts` — clinician profiles
-- `testimonials.ts` — patient quotes
-- `stats.ts` — impact metrics
-- `process-steps.ts` — the four-step care journey
-- `navigation.ts` — header and footer links
+- `site-content.ts` controls section headings, paragraphs, CTA labels, and footer text.
+- `services.ts` controls service and department cards.
+- `team.ts` controls team member cards.
+- `testimonials.ts` controls testimonials.
+- `stats.ts` controls the metric cards.
+- `process-steps.ts` controls the four-step process section.
+- `navigation.ts` controls header and footer links.
 
-Replace the Picsum URLs in these files with client photography. Components do not require props, so every section can be reordered or removed directly in `src/pages/Home.tsx`.
+Page layout lives in `src/pages/Home.tsx`. You can reorder or remove sections there without changing the section components.
 
-## Switch themes
+## Theme
 
-Use the palette button in the navbar to switch themes at runtime. The choice is stored in local storage.
+The default theme is the soft blue medical theme. A bold green theme is also included.
 
-For a different default, edit `defaultTheme` in `src/lib/theme.ts`:
+To change the default theme, edit `src/lib/theme.ts`:
 
 ```ts
 export const defaultTheme: ThemeName = themes.bold;
 ```
 
-Color values live in `src/styles/globals.css` under `[data-theme='clinical-blue']` and `[data-theme='bold-green']`. Tailwind maps semantic utilities such as `bg-primary`, `text-muted`, and `shadow-glass` to those variables through `tailwind.config.ts`; components never depend on brand-specific hex values.
+Theme colors are defined as CSS variables in `src/styles/globals.css`. Tailwind maps those variables in `tailwind.config.ts`, so components use readable classes like `bg-primary`, `text-muted`, and `shadow-glass`.
 
-## Structure
+## Project Structure
 
-- `src/components/ui` — reusable primitives
-- `src/components/layout` — navbar, mobile drawer, newsletter, footer
-- `src/components/sections` — complete page sections with default content
-- `src/data` — centralized content and typed collections
-- `src/hooks` — scroll, viewport, and reduced-motion helpers
-- `src/lib` — theme, animation, and class utilities
-- `src/pages` — Home plus About, Services, and Contact routes
-- `src/styles` — Tailwind layers and runtime theme variables
+- `src/components/ui` contains small reusable components.
+- `src/components/layout` contains navbar, drawer, newsletter, and footer.
+- `src/components/sections` contains complete website sections.
+- `src/data` contains all mock content.
+- `src/hooks` contains reusable browser hooks.
+- `src/lib` contains theme, animation, and class helpers.
+- `src/pages` contains route pages.
+- `src/styles` contains global styles and theme variables.
 
-Motion is centralized in `src/lib/animations.ts` and respects the operating system's reduced-motion preference.
-
-The production build also creates a minimal `dist/server/index.js` asset worker so the Vite SPA can be hosted on OpenAI Sites with client-side route fallbacks.
+Motion settings are centralized in `src/lib/animations.ts` and respect reduced-motion preferences.

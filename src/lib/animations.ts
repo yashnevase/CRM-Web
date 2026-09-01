@@ -28,4 +28,8 @@ export const slideDrawer: Variants = {
   exit: { x: '100%', transition: { duration: 0.4, ease: easePremium } },
 };
 
-export const inViewProps = { initial: 'hidden', whileInView: 'visible', viewport: { once: true, amount: 0.2 } } as const;
+export const inViewProps = {
+  initial: 'hidden',
+  whileInView: 'visible',
+  viewport: { once: true, amount: 0.2 },
+} as const;
