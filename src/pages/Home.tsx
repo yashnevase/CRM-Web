@@ -1,28 +1,28 @@
 import { AboutSection } from '../components/sections/AboutSection';
 import { CareProgramsSection } from '../components/sections/CareProgramsSection';
 import { CTASection } from '../components/sections/CTASection';
-import { DepartmentsSection } from '../components/sections/DepartmentsSection';
+import { HealthcareNetworkSection } from '../components/sections/HealthcareNetworkSection';
 import { Hero } from '../components/sections/Hero';
 import { ProcessSteps } from '../components/sections/ProcessSteps';
 import { ServicesGrid } from '../components/sections/ServicesGrid';
-import { StatsStrip } from '../components/sections/StatsStrip';
-import { TeamSection } from '../components/sections/TeamSection';
 import { TechnologyNetworkSection } from '../components/sections/TechnologyNetworkSection';
-import { TestimonialsSection } from '../components/sections/TestimonialsSection';
+import { TrustStrip } from '../components/sections/TrustStrip';
+import { ValuesSection } from '../components/sections/ValuesSection';
+import { WhyChooseSection } from '../components/sections/WhyChooseSection';
 
 export function Home() {
   return (
     <main>
       <Hero />
-      <StatsStrip />
+      <TrustStrip />
       <AboutSection />
       <ServicesGrid />
       <CareProgramsSection />
       <TechnologyNetworkSection />
       <ProcessSteps />
-      <DepartmentsSection />
-      <TeamSection />
-      <TestimonialsSection />
+      <HealthcareNetworkSection />
+      <ValuesSection />
+      <WhyChooseSection />
       <CTASection />
     </main>
   );

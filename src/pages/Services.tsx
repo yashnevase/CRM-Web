@@ -1,5 +1,6 @@
 import { CTASection } from '../components/sections/CTASection';
-import { DepartmentsSection } from '../components/sections/DepartmentsSection';
+import { CareProgramsSection } from '../components/sections/CareProgramsSection';
+import { HealthcareNetworkSection } from '../components/sections/HealthcareNetworkSection';
 import { ProcessSteps } from '../components/sections/ProcessSteps';
 import { ServicesGrid } from '../components/sections/ServicesGrid';
 import { siteContent } from '../data/site-content';
@@ -10,7 +11,8 @@ export function Services() {
     <main>
       <PageHero {...siteContent.pages.services} />
       <ServicesGrid />
-      <DepartmentsSection />
+      <CareProgramsSection />
+      <HealthcareNetworkSection />
       <ProcessSteps />
       <CTASection />
     </main>

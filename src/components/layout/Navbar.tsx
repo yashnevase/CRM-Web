@@ -36,7 +36,13 @@ export function Navbar() {
             className="focus-ring flex items-center rounded-xl"
             aria-label="LifeMed Connect home"
           >
-            <img src={logo} alt="LifeMed Connect" className="h-12 w-auto sm:h-14" />
+            <img
+              src={logo}
+              alt="LifeMed Connect"
+              width="540"
+              height="161"
+              className="h-12 w-auto sm:h-14"
+            />
           </Link>
           <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Primary navigation">
             {navigation.map((item) => (
@@ -45,7 +51,7 @@ export function Navbar() {
                 to={item.href}
                 className={({ isActive }) =>
                   cn(
-                    'focus-ring rounded-full px-3 py-2 text-sm font-semibold transition-colors hover:bg-white/65 hover:text-primary',
+                    'focus-ring rounded-full px-3 py-2 text-sm font-semibold transition-colors hover:bg-white/70 hover:text-primary',
                     isActive && !item.href.includes('#') ? 'text-primary' : 'text-ink/75',
                   )
                 }
@@ -57,7 +63,7 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <Link
               to="/contact"
-              className="focus-ring hidden rounded-full border border-primary/20 bg-white/60 px-4 py-3 text-sm font-bold text-primary backdrop-blur-2xl transition duration-500 hover:bg-white lg:inline-flex"
+              className="focus-ring hidden rounded-full border border-primary/20 bg-white/60 px-4 py-3 text-sm font-bold text-primary backdrop-blur-2xl transition duration-500 hover:bg-white xl:inline-flex"
             >
               {siteContent.common.partner}
             </Link>
@@ -69,7 +75,7 @@ export function Navbar() {
             </Link>
             <button
               onClick={() => setOpen(true)}
-              className="focus-ring rounded-full border border-line/70 bg-white/70 p-3 lg:hidden"
+              className="focus-ring rounded-full border border-line/70 bg-white/70 p-3 xl:hidden"
               aria-label="Open navigation"
             >
               <Menu className="h-5 w-5" />

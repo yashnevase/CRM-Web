@@ -1,162 +1,207 @@
+import { motion } from 'framer-motion';
 import {
   ArrowUpRight,
-  CalendarDays,
+  Building2,
   Check,
-  MonitorCheck,
+  HeartPulse,
+  MapPinned,
   Network,
   ShieldCheck,
-  Star,
 } from 'lucide-react';
-import { motion } from 'framer-motion';
+import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { siteContent } from '../../data/site-content';
-import { fadeUp, inViewProps, staggerContainer } from '../../lib/animations';
-import { Badge } from '../ui/Badge';
+import { fadeUp, staggerContainer } from '../../lib/animations';
 import { GlassCard } from '../ui/GlassCard';
-import { Avatar } from '../ui/Avatar';
-import { CountUp } from '../ui/CountUp';
 import { MediaPlaceholder } from '../ui/MediaPlaceholder';
-
-const proofAvatars = [
-  'https://picsum.photos/seed/proof-one/100/100',
-  'https://picsum.photos/seed/proof-two/100/100',
-  'https://picsum.photos/seed/proof-three/100/100',
-];
+import { ServiceIcon } from '../ui/ServiceIcon';
 
 export function Hero() {
   const content = siteContent.hero;
+
   return (
     <section
-      className="relative overflow-hidden bg-hero-mesh pb-24 pt-32 sm:pt-36 lg:min-h-[760px] lg:pb-28"
+      className="frosted-stage relative overflow-hidden pb-12 pt-28 sm:pt-32 lg:min-h-[760px] lg:pb-16 lg:pt-30"
       aria-labelledby="hero-title"
     >
-      <div className="quiet-grid pointer-events-none absolute inset-0 opacity-70" />
-      <div className="page-shell relative grid items-center gap-14 lg:grid-cols-[1.03fr_.97fr] lg:gap-12">
-        <motion.div {...inViewProps} variants={staggerContainer}>
-          <motion.div variants={fadeUp}>
-            <Badge icon={<Star className="h-3.5 w-3.5 fill-current" />}>{content.eyebrow}</Badge>
-          </motion.div>
-          <motion.h1
-            id="hero-title"
-            variants={fadeUp}
-            className="mt-6 max-w-3xl text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-6xl xl:text-7xl"
-          >
-            {content.title} <span className="text-primary">{content.accent}</span>
-          </motion.h1>
-          <motion.p
-            variants={fadeUp}
-            className="mt-6 max-w-xl text-base leading-7 text-muted sm:text-lg"
-          >
-            {content.description}
-          </motion.p>
-          <motion.ul variants={fadeUp} className="mt-6 flex flex-wrap gap-x-5 gap-y-3">
-            {content.features.map((feature) => (
-              <li key={feature} className="flex items-center gap-2 text-sm font-semibold">
-                <span className="rounded-full bg-accent-soft p-1 text-accent-strong">
-                  <Check className="h-3.5 w-3.5" />
-                </span>
-                {feature}
-              </li>
-            ))}
-          </motion.ul>
-          <motion.div variants={fadeUp} className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link
-              to="/contact"
-              className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-accent px-6 text-sm font-extrabold text-ink shadow-glow transition duration-500 hover:scale-[1.025] hover:bg-accent-strong"
+      <div className="quiet-grid pointer-events-none absolute inset-0 opacity-55" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/90" />
+
+      <div className="page-shell relative">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(430px,.86fr)] xl:gap-14">
+          <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
+            <motion.p
+              variants={fadeUp}
+              className="max-w-sm text-xs font-extrabold uppercase text-primary-dark/70"
             >
-              {siteContent.common.book}
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
-            <Link
-              to="/services"
-              className="focus-ring inline-flex min-h-12 items-center justify-center rounded-full border border-primary/20 bg-white/50 px-6 text-sm font-bold backdrop-blur transition hover:bg-white"
+              {content.eyebrow}
+            </motion.p>
+
+            <motion.h1
+              id="hero-title"
+              variants={fadeUp}
+              className="mt-5 max-w-4xl text-5xl font-black leading-none text-primary-dark sm:text-6xl lg:text-7xl"
             >
-              {content.secondaryCta}
-            </Link>
-          </motion.div>
-          <motion.div variants={fadeUp} className="mt-8 flex items-center gap-4">
-            <div className="flex -space-x-3">
-              {proofAvatars.map((src, index) => (
-                <Avatar
-                  key={src}
-                  src={src}
-                  alt={`Patient reviewer ${index + 1}`}
-                  className="h-10 w-10"
-                />
+              {content.title}
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              className="mt-4 max-w-3xl font-display text-2xl font-bold leading-tight text-ink sm:text-3xl lg:text-4xl"
+            >
+              {content.accent}
+            </motion.p>
+
+            <motion.p
+              variants={fadeUp}
+              className="mt-6 max-w-2xl text-base font-medium leading-8 text-ink/76 sm:text-lg"
+            >
+              {content.description}
+            </motion.p>
+            <motion.p
+              variants={fadeUp}
+              className="mt-4 hidden max-w-2xl text-sm leading-7 text-muted sm:block"
+            >
+              {content.supportingText}
+            </motion.p>
+
+            <motion.div variants={fadeUp} className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                to="/services"
+                className="focus-ring group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-extrabold text-white shadow-glass transition duration-500 hover:-translate-y-0.5 hover:bg-primary-dark"
+              >
+                {siteContent.common.explore}
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+              <Link
+                to="/contact"
+                className="focus-ring inline-flex min-h-12 items-center justify-center rounded-full border border-white/80 bg-white/[.66] px-6 py-3.5 text-sm font-extrabold text-primary-dark shadow-card backdrop-blur-xl transition duration-500 hover:-translate-y-0.5 hover:bg-white"
+              >
+                {siteContent.common.partner}
+              </Link>
+            </motion.div>
+
+            <motion.ul variants={fadeUp} className="mt-9 hidden flex-wrap gap-3 sm:flex">
+              {content.features.map((feature) => (
+                <li
+                  key={feature}
+                  className="flex items-center gap-2 rounded-full border border-primary/10 bg-white/[.46] px-3.5 py-2 text-xs font-bold text-ink/75 backdrop-blur-lg"
+                >
+                  <Check className="h-3.5 w-3.5 text-primary" />
+                  {feature}
+                </li>
               ))}
-            </div>
-            <div>
-              <div className="flex gap-0.5 text-accent-strong">
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <Star key={index} className="h-3.5 w-3.5 fill-current" />
-                ))}
-              </div>
-              <p className="mt-1 text-xs font-semibold text-muted">{content.reviews}</p>
-            </div>
+            </motion.ul>
           </motion.div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 30, scale: 0.97 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.35, duration: 0.75 }}
-          className="relative mx-auto w-full max-w-[580px]"
-        >
-          <div className="mac-glass overflow-hidden rounded-4xl p-3">
-            <MediaPlaceholder
-              label={content.imageAlt}
-              className="aspect-[.88] w-full rounded-[1.6rem]"
-            />
-          </div>
+
           <motion.div
-            animate={{ y: [-4, 5, -4] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -left-3 top-[18%] sm:-left-9"
+            initial={{ opacity: 0, y: 34, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ delay: 0.25, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="relative mx-auto hidden w-full max-w-[560px] sm:block"
           >
-            <GlassCard className="flex items-center gap-3 p-4">
-              <span className="rounded-2xl bg-accent-soft p-3 text-accent-strong">
-                <MonitorCheck className="h-5 w-5" />
-              </span>
-              <div>
-                <p className="text-xs text-muted">{content.badges.score}</p>
-                <p className="mt-1 font-display text-xl font-extrabold">
-                  <CountUp target={98} suffix="%" />
+            <div className="mac-glass overflow-hidden rounded-[2.4rem] p-3 sm:p-4">
+              <MediaPlaceholder
+                label={content.visualLabel}
+                kind="person"
+                className="aspect-[1.28] w-full rounded-[1.8rem] lg:aspect-[.9]"
+              />
+            </div>
+
+            <FloatingBadge className="-left-2 top-[14%] sm:-left-10" delay={0}>
+              <ShieldCheck className="h-5 w-5 text-accent-strong" />
+              <span>{content.badges.technology}</span>
+            </FloatingBadge>
+
+            <FloatingBadge className="right-1 top-8 sm:-right-8" delay={0.45}>
+              <MapPinned className="h-5 w-5 text-primary" />
+              <span>{content.badges.network}</span>
+            </FloatingBadge>
+
+            <motion.div
+              animate={{ y: [5, -5, 5] }}
+              transition={{ duration: 6.4, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute -bottom-8 left-5 right-5 hidden sm:left-12 sm:right-12 sm:block"
+            >
+              <GlassCard className="flex items-center justify-between gap-3 rounded-2xl px-4 py-3.5 sm:px-5">
+                <div className="flex -space-x-2">
+                  {[HeartPulse, Building2, Network].map((Icon, index) => (
+                    <span
+                      key={index}
+                      className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-white bg-primary-soft text-primary"
+                    >
+                      <Icon className="h-4 w-4" />
+                    </span>
+                  ))}
+                </div>
+                <p className="text-right text-xs font-extrabold text-primary-dark sm:text-sm">
+                  {content.badges.services}
                 </p>
-              </div>
-            </GlassCard>
+              </GlassCard>
+            </motion.div>
           </motion.div>
-          <motion.div
-            animate={{ y: [5, -5, 5] }}
-            transition={{ duration: 5.6, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute right-4 top-6"
-          >
-            <GlassCard className="hidden items-center gap-3 p-4 sm:flex">
-              <span className="rounded-2xl bg-primary p-3 text-white">
-                <Network className="h-5 w-5" />
-              </span>
+        </div>
+
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+          className="mt-10 grid grid-cols-3 gap-2 sm:gap-4 lg:-mt-2 lg:max-w-[86%]"
+        >
+          {content.serviceTiles.map((tile, index) => (
+            <motion.article
+              variants={fadeUp}
+              key={tile}
+              className={`interactive-card mac-glass group flex min-h-[116px] flex-col justify-between overflow-hidden rounded-3xl p-3 sm:min-h-[138px] sm:flex-row sm:items-end sm:p-5 ${
+                index === 2 ? 'bg-primary text-white' : ''
+              }`}
+            >
               <div>
-                <p className="text-xs text-muted">Network status</p>
-                <p className="mt-1 text-sm font-bold">Mapped and ready</p>
+                <span
+                  className={`mb-4 flex h-9 w-9 items-center justify-center rounded-full sm:mb-5 sm:h-11 sm:w-11 ${
+                    index === 2 ? 'bg-white text-primary' : 'bg-primary-soft text-primary'
+                  }`}
+                >
+                  <ServiceIcon
+                    name={index === 0 ? 'clipboard' : index === 1 ? 'home' : 'building'}
+                  />
+                </span>
+                <h2 className="text-sm font-bold leading-tight sm:max-w-[13rem] sm:text-xl">
+                  {tile}
+                </h2>
               </div>
-            </GlassCard>
-          </motion.div>
-          <motion.div
-            animate={{ y: [6, -6, 6] }}
-            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -bottom-6 right-0 sm:right-5"
-          >
-            <GlassCard className="flex items-center gap-3 p-4">
-              <span className="rounded-2xl bg-primary-soft p-3 text-primary">
-                <CalendarDays className="h-5 w-5" />
+              <span
+                className={`ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition duration-500 group-hover:rotate-45 sm:h-12 sm:w-12 ${
+                  index === 2 ? 'bg-white text-primary' : 'bg-accent text-ink'
+                }`}
+              >
+                <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5" />
               </span>
-              <div>
-                <p className="text-xs text-muted">{content.badges.availability}</p>
-                <p className="mt-1 text-sm font-bold">{content.badges.today}</p>
-              </div>
-              <ShieldCheck className="h-4 w-4 text-accent-strong" />
-            </GlassCard>
-          </motion.div>
+            </motion.article>
+          ))}
         </motion.div>
       </div>
     </section>
+  );
+}
+
+function FloatingBadge({
+  children,
+  className,
+  delay,
+}: {
+  children: ReactNode;
+  className: string;
+  delay: number;
+}) {
+  return (
+    <motion.div
+      animate={{ y: [-5, 5, -5] }}
+      transition={{ duration: 5.6, delay, repeat: Infinity, ease: 'easeInOut' }}
+      className={`absolute ${className}`}
+    >
+      <GlassCard className="flex items-center gap-2.5 rounded-2xl px-4 py-3 text-xs font-extrabold text-primary-dark sm:text-sm">
+        {children}
+      </GlassCard>
+    </motion.div>
   );
 }

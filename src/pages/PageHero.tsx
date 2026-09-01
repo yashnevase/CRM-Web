@@ -1,6 +1,4 @@
 import { motion } from 'framer-motion';
-import { Sparkles } from 'lucide-react';
-import { Badge } from '../components/ui/Badge';
 import { fadeUp, inViewProps, staggerContainer } from '../lib/animations';
 
 interface PageHeroProps {
@@ -18,9 +16,9 @@ export function PageHero({ eyebrow, title, description }: PageHeroProps) {
         variants={staggerContainer}
         className="page-shell relative text-center"
       >
-        <motion.div variants={fadeUp}>
-          <Badge icon={<Sparkles className="h-3.5 w-3.5" />}>{eyebrow}</Badge>
-        </motion.div>
+        <motion.p variants={fadeUp} className="text-xs font-extrabold uppercase text-primary">
+          {eyebrow}
+        </motion.p>
         <motion.h1
           variants={fadeUp}
           className="mx-auto mt-6 max-w-4xl text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl"

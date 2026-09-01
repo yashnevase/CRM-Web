@@ -25,19 +25,26 @@ export default {
         cream: color('cream'),
       },
       fontFamily: {
-        display: ['Sora', 'sans-serif'],
-        body: ['Manrope', 'sans-serif'],
+        display: [
+          'Avenir Next',
+          'SF Pro Display',
+          'Segoe UI Variable Display',
+          'Segoe UI',
+          'sans-serif',
+        ],
+        body: ['Inter', 'SF Pro Text', 'Segoe UI Variable Text', 'Segoe UI', 'sans-serif'],
       },
       borderRadius: { '3xl': '1.75rem', '4xl': '2.25rem' },
       boxShadow: {
-        glass: '0 30px 80px -42px rgb(var(--color-primary) / .42)',
-        card: '0 18px 45px -30px rgb(17 17 17 / .30)',
-        glow: '0 18px 42px -20px rgb(var(--color-accent) / .85)',
+        glass:
+          '0 36px 90px -48px rgb(var(--color-primary-dark) / .42), 0 16px 38px -30px rgb(17 17 17 / .28)',
+        card: '0 20px 55px -38px rgb(17 17 17 / .32)',
+        glow: '0 20px 44px -22px rgb(var(--color-accent-strong) / .72)',
       },
       spacing: { section: '6rem', 'section-mobile': '3.5rem' },
       backgroundImage: {
         'hero-mesh':
-          'linear-gradient(135deg, rgb(var(--color-canvas)), rgb(var(--color-surface)) 46%, rgb(var(--color-accent-soft)))',
+          'linear-gradient(125deg, rgb(var(--color-primary-soft)) 0%, rgb(var(--color-canvas)) 34%, rgb(var(--color-surface)) 66%, rgb(var(--color-accent-soft)) 100%)',
         'deep-gradient':
           'linear-gradient(135deg, rgb(8 107 121), rgb(10 127 143) 58%, rgb(10 155 171))',
       },

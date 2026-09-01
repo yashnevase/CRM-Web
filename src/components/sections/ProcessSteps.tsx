@@ -22,6 +22,7 @@ export function ProcessSteps() {
       <div className="page-shell relative">
         <motion.div {...inViewProps} variants={fadeUp}>
           <SectionHeading
+            id="process-title"
             dark
             eyebrow={siteContent.process.eyebrow}
             title={siteContent.process.title}
@@ -58,7 +59,7 @@ export function ProcessSteps() {
                   </span>
                 </motion.div>
                 <h3 className="mt-7 text-xl font-bold">{step.title}</h3>
-                <p className="mt-3 max-w-xs text-sm leading-6 text-white/60">{step.description}</p>
+                <p className="mt-3 max-w-xs text-sm leading-6 text-white/75">{step.description}</p>
               </motion.li>
             );
           })}

@@ -1,26 +1,26 @@
 export const processSteps = [
   {
     number: '01',
-    title: 'Capture request',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Share your requirement',
+    description: 'Tell us the service, location and support you need.',
     icon: 'message' as const,
   },
   {
     number: '02',
-    title: 'Map provider',
-    description: 'Nullam quis risus eget urna mollis ornare vel eu leo.',
+    title: 'We map the right provider',
+    description: 'The request is matched by service capability and location.',
     icon: 'calendar' as const,
   },
   {
     number: '03',
-    title: 'Coordinate service',
-    description: 'Cras mattis consectetur purus sit amet fermentum.',
+    title: 'Care is coordinated',
+    description: 'Our operations team confirms and manages service delivery.',
     icon: 'clipboard' as const,
   },
   {
     number: '04',
-    title: 'Track and report',
-    description: 'Donec ullamcorper nulla non metus auctor fringilla.',
+    title: 'Track to completion',
+    description: 'Status, completion and reporting stay visible through the journey.',
     icon: 'sparkles' as const,
   },
 ];

@@ -1,123 +1,140 @@
 export const siteContent = {
-  brand: { name: 'LifeMed Connect', descriptor: 'health and insurance, seamlessly connected' },
+  brand: {
+    name: 'LifeMed Connect',
+    descriptor: 'Health and insurance, seamlessly connected',
+  },
   common: {
     book: 'Book a service',
     partner: 'Partner with us',
     talk: 'Talk to us',
     learn: 'Learn more',
-    explore: 'Explore services',
+    explore: 'Explore our services',
   },
   hero: {
-    eyebrow: 'Health and insurance, connected',
-    title: 'Healthcare access that feels',
-    accent: 'simple and coordinated.',
+    eyebrow: 'Healthcare coordination platform',
+    title: 'LifeMed Connect',
+    accent: 'care, programs and partners in one flow.',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.',
-    features: ['Professional network', 'Digital coordination', 'Quality-led operations'],
-    secondaryCta: 'Explore services',
-    reviews: '1k+ coordinated care journeys',
-    imageAlt: 'Digital healthcare coordination dashboard with patient care indicators',
+      'LifeMed Connect delivers reliable, accessible and professionally managed healthcare solutions for individuals, corporates, insurers, institutions and healthcare partners.',
+    supportingText:
+      'From preventive health assessments and diagnostics to home healthcare and corporate programs, one coordinated ecosystem makes every care journey easier to access and manage.',
+    features: ['Individuals', 'Corporates', 'Insurers', 'Healthcare partners'],
+    imageAlt: 'Healthcare professional representing connected healthcare services',
+    visualLabel: 'Add hero-healthcare-professional.jpg',
     badges: {
-      score: 'Service visibility',
-      availability: 'Next visit available',
-      today: 'Today, 3:30 PM',
+      technology: 'Request to report visibility',
+      network: 'Multi-city service network',
+      services: 'Preventive care · Diagnostics · Home care',
     },
+    serviceTiles: ['Preventive health checks', 'Home healthcare', 'Corporate programs'],
   },
   about: {
-    eyebrow: 'Designed around you',
-    title: 'Modern medicine, with more time for people.',
+    eyebrow: 'About LifeMed Connect',
+    title: 'Making healthcare delivery simpler, accessible and reliable.',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor.',
-    features: [
-      'Longer consultations',
-      'Connected specialists',
-      'Clear next steps',
-      'Secure health records',
-      'Whole-person plans',
-      'Ongoing check-ins',
+      'We combine healthcare professionals, technology, operational processes and a growing network of service partners to deliver healthcare solutions across multiple touchpoints.',
+    statement: 'Make quality healthcare easier to access and easier to manage.',
+    capabilities: [
+      'Preventive healthcare',
+      'Diagnostics and pathology',
+      'Home healthcare',
+      'Corporate health programs',
+      'Occupational health',
+      'Healthcare network management',
     ],
-    imageAlt: 'Doctor and patient reviewing a personalized care plan',
-    badge: 'Care, made personal',
+    imageAlt: 'Healthcare professional coordinating a patient care journey',
+    visualLabel: 'Add about-care-coordination.jpg',
+    mission: {
+      title: 'Our mission',
+      text: 'To make quality healthcare accessible, organized and easier to coordinate.',
+    },
+    vision: {
+      title: 'Our vision',
+      text: 'A trusted healthcare ecosystem where technology and human expertise work together to deliver better care.',
+    },
   },
   services: {
-    eyebrow: 'Service ecosystem',
-    title: 'Healthcare modules ready for every care journey.',
+    eyebrow: 'Our services',
+    title: 'Comprehensive healthcare solutions, coordinated through one ecosystem.',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue.',
-    cardLink: 'Read more',
+      'Flexible healthcare services for individual, corporate and institutional requirements—designed around accessibility, quality and clear operational visibility.',
+    cardLink: 'View service',
   },
-  programs: {
-    eyebrow: 'Built for every audience',
-    title: 'Individual, corporate and partner journeys in one structure.',
+  careDelivery: {
+    eyebrow: 'Care across every setting',
+    title: 'From the workplace to the comfort of home.',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere.',
+      'Modular service areas make it easy to add final photography and detailed content later without changing the page structure.',
   },
   process: {
-    eyebrow: 'Simple by design',
-    title: 'A clearer path from request to service delivery.',
+    eyebrow: 'How service delivery works',
+    title: 'A clear path from request to completion.',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum.',
+      'Every request follows a coordinated workflow so customers and organizations know what happens next.',
   },
-  departments: {
+  network: {
     eyebrow: 'Healthcare network',
-    title: 'A flexible network model for future partner content.',
-    description: 'Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.',
+    title: 'One connected network. Multiple healthcare needs.',
+    description:
+      'Customers connect with qualified professionals, diagnostic providers, hospitals, clinics and service partners through centralized coordination and visibility.',
   },
   technology: {
-    eyebrow: 'Technology enabled',
-    title: 'A calm operational layer behind complex healthcare delivery.',
+    eyebrow: 'Technology',
+    title: 'Technology that simplifies healthcare operations.',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor.',
-    tags: ['Request', 'Map', 'Allocate', 'Track', 'Report'],
+      'Complex healthcare delivery becomes easier to manage when requests, professionals, locations and service requirements are connected through a single operational layer.',
+    dashboardEyebrow: 'Operations overview',
+    dashboardTitle: 'Connected healthcare workflow',
+    dashboardStatus: 'Active',
   },
-  team: {
-    eyebrow: 'People who listen',
-    title: 'Meet your care team.',
+  values: {
+    eyebrow: 'Our core values',
+    title: 'The principles behind every service we coordinate.',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna.',
+      'A people-first culture supported by transparent processes, accountable delivery and practical technology.',
   },
-  testimonials: {
-    eyebrow: 'Patient stories',
-    title: 'Care that feels different.',
-    description: 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.',
+  whyChoose: {
+    eyebrow: 'Why LifeMed Connect',
+    title: 'Built for dependable healthcare delivery at scale.',
+    description:
+      'Healthcare expertise, network reach and operational discipline come together in one flexible service model.',
   },
   cta: {
-    eyebrow: 'Lead-ready skeleton',
-    title: 'Every important action has a clear path to enquiry.',
+    eyebrow: 'Let’s build better healthcare together',
+    title: 'Healthcare support for people, workplaces and partners.',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Start with a simple conversation.',
-  },
-  newsletter: {
-    eyebrow: 'The LifeMed update',
-    title: 'Useful health notes, once a month.',
-    placeholder: 'Email address',
-    button: 'Join the list',
+      'Tell us what you need and our team will help shape the right service, program or partnership.',
   },
   footer: {
     blurb:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Connected care for modern healthcare journeys.',
-    headings: { company: 'Company', services: 'Services', contact: 'Contact' },
+      'Connecting healthcare professionals, technology and operations to make care easier to access and manage.',
+    headings: {
+      company: 'Company',
+      services: 'Services',
+      partners: 'Partners',
+      contact: 'Contact',
+    },
     contact: ['hello@lifemed.example', '+91 00000 00000', 'Mumbai, India'],
-    copyright: '(c) 2026 LifeMed Connect. Template content for demonstration only.',
+    copyright: '© 2026 LifeMed Connect. All rights reserved.',
   },
   pages: {
     about: {
       eyebrow: 'About LifeMed Connect',
-      title: 'A new standard for everyday care.',
+      title: 'Healthcare, technology and operations—working as one.',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
+        'Learn how our mission, values and connected operating model make healthcare delivery easier to access and manage.',
     },
     services: {
       eyebrow: 'Our services',
-      title: 'Connected expertise for every chapter.',
+      title: 'Healthcare solutions for people and organizations.',
       description:
-        'Cras mattis consectetur purus sit amet fermentum. Vestibulum id ligula porta felis euismod semper.',
+        'Explore preventive care, diagnostics, home healthcare, corporate programs and network-enabled delivery.',
     },
     contact: {
       eyebrow: 'Contact us',
-      title: "Let's begin with a conversation.",
+      title: 'Let’s build better healthcare together.',
       description:
-        'Aenean lacinia bibendum nulla sed consectetur. Tell us how we can help and our care team will be in touch.',
+        'Whether you need personal care, an employee health program or a delivery partner, our team is ready to help.',
     },
   },
 } as const;

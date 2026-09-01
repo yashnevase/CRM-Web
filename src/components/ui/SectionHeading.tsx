@@ -1,8 +1,8 @@
-import { Sparkles } from 'lucide-react';
 import { Badge } from './Badge';
 import { cn } from '../../lib/cn';
 
 interface SectionHeadingProps {
+  id?: string;
   eyebrow: string;
   title: string;
   description: string;
@@ -11,6 +11,7 @@ interface SectionHeadingProps {
 }
 
 export function SectionHeading({
+  id,
   eyebrow,
   title,
   description,
@@ -19,13 +20,21 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div
-      className={cn('max-w-2xl', align === 'center' && 'mx-auto text-center', dark && 'text-white')}
+      className={cn('max-w-3xl', align === 'center' && 'mx-auto text-center', dark && 'text-white')}
     >
-      <Badge dark={dark} icon={<Sparkles className="h-3.5 w-3.5" />}>
+      <Badge dark={dark} quiet>
         {eyebrow}
       </Badge>
-      <h2 className="mt-5 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">{title}</h2>
-      <p className={cn('mt-5 text-base leading-7', dark ? 'text-white/65' : 'text-muted')}>
+      <h2 id={id} className="mt-4 text-3xl font-bold leading-[1.08] sm:text-4xl lg:text-5xl">
+        {title}
+      </h2>
+      <p
+        className={cn(
+          'mt-5 max-w-2xl text-base leading-7 sm:text-lg',
+          align === 'center' && 'mx-auto',
+          dark ? 'text-white/70' : 'text-muted',
+        )}
+      >
         {description}
       </p>
     </div>

@@ -2,6 +2,10 @@ import {
   Activity,
   Brain,
   Building2,
+  ChartNoAxesCombined,
+  Handshake,
+  MapPinned,
+  Medal,
   ClipboardCheck,
   FlaskConical,
   HeartPulse,
@@ -9,6 +13,8 @@ import {
   Network,
   Sparkles,
   Stethoscope,
+  ShieldCheck,
+  UserCheck,
   UsersRound,
 } from 'lucide-react';
 
@@ -23,7 +29,14 @@ export type ServiceIconName =
   | 'home'
   | 'network'
   | 'users'
-  | 'clipboard';
+  | 'clipboard'
+  | 'map'
+  | 'report'
+  | 'chart'
+  | 'shield'
+  | 'badge'
+  | 'handshake'
+  | 'user-check';
 
 export function ServiceIcon({
   name,
@@ -44,6 +57,13 @@ export function ServiceIcon({
     network: Network,
     users: UsersRound,
     clipboard: ClipboardCheck,
+    map: MapPinned,
+    report: ClipboardCheck,
+    chart: ChartNoAxesCombined,
+    shield: ShieldCheck,
+    badge: Medal,
+    handshake: Handshake,
+    'user-check': UserCheck,
   };
   const Icon = icons[name];
   return <Icon className={className} aria-hidden="true" />;
