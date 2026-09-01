@@ -1,0 +1,71 @@
+export const siteContent = {
+  brand: { name: 'Lumena', descriptor: 'health collective' },
+  common: { book: 'Book appointment', learn: 'Learn more', explore: 'Explore services' },
+  hero: {
+    eyebrow: 'Trusted healthcare partner',
+    title: 'Care that sees the',
+    accent: 'whole you.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.',
+    features: ['Same-week visits', 'Personal care plans', 'Digital follow-ups'],
+    secondaryCta: 'Discover our approach',
+    reviews: '1k+ verified reviews',
+    imageAlt: 'Healthcare specialist consulting with a patient in a calm clinic',
+    badges: { score: 'Patient care score', availability: 'Next visit available', today: 'Today, 3:30 PM' },
+  },
+  about: {
+    eyebrow: 'Designed around you',
+    title: 'Modern medicine, with more time for people.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor.',
+    features: ['Longer consultations', 'Connected specialists', 'Clear next steps', 'Secure health records', 'Whole-person plans', 'Ongoing check-ins'],
+    imageAlt: 'Doctor and patient reviewing a personalized care plan',
+    badge: 'Care, made personal',
+  },
+  services: {
+    eyebrow: 'Care, connected',
+    title: 'Everything you need to feel your best.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue.',
+    cardLink: 'Read more',
+  },
+  process: {
+    eyebrow: 'Simple by design',
+    title: 'A clearer path to better health.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum.',
+  },
+  departments: {
+    eyebrow: 'Our departments',
+    title: 'Specialist expertise, one connected team.',
+    description: 'Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.',
+  },
+  team: {
+    eyebrow: 'People who listen',
+    title: 'Meet your care team.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna.',
+  },
+  testimonials: {
+    eyebrow: 'Patient stories',
+    title: 'Care that feels different.',
+    description: 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.',
+  },
+  cta: {
+    eyebrow: 'Your wellbeing starts here',
+    title: 'Ready for care that fits your life?',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Start with a simple conversation.',
+  },
+  newsletter: {
+    eyebrow: 'The Lumena letter',
+    title: 'Useful health notes, once a month.',
+    placeholder: 'Email address',
+    button: 'Join the list',
+  },
+  footer: {
+    blurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Thoughtful care for modern life.',
+    headings: { company: 'Company', services: 'Services', contact: 'Contact' },
+    contact: ['hello@lumena.example', '+1 (555) 014-2210', '120 Wellness Avenue'],
+    copyright: '© 2026 Lumena Health. Template content for demonstration only.',
+  },
+  pages: {
+    about: { eyebrow: 'About Lumena', title: 'A new standard for everyday care.', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.' },
+    services: { eyebrow: 'Our services', title: 'Connected expertise for every chapter.', description: 'Cras mattis consectetur purus sit amet fermentum. Vestibulum id ligula porta felis euismod semper.' },
+    contact: { eyebrow: 'Contact us', title: 'Let’s begin with a conversation.', description: 'Aenean lacinia bibendum nulla sed consectetur. Tell us how we can help and our care team will be in touch.' },
+  },
+} as const;
