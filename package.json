@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && node scripts/prepare-build.mjs && vite build && node scripts/create-sites-entry.mjs",
     "lint": "eslint . --max-warnings 0",
     "typecheck": "tsc -b --pretty false",
     "preview": "vite preview"

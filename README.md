@@ -54,3 +54,5 @@ Color values live in `src/styles/globals.css` under `[data-theme='clinical-blue'
 - `src/styles` — Tailwind layers and runtime theme variables
 
 Motion is centralized in `src/lib/animations.ts` and respects the operating system's reduced-motion preference.
+
+The production build also creates a minimal `dist/server/index.js` asset worker so the Vite SPA can be hosted on OpenAI Sites with client-side route fallbacks.
