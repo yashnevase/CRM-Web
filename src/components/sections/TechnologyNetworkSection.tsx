@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, LockKeyhole, Radio } from 'lucide-react';
+import dashboardImage from '../../assets/images/optimized/technology-dashboard.jpg';
 import { technologyCapabilities } from '../../data/company';
 import { siteContent } from '../../data/site-content';
 import { fadeUp, inViewProps, staggerFast } from '../../lib/animations';
+import { MediaPlaceholder } from '../ui/MediaPlaceholder';
 import { SectionHeading } from '../ui/SectionHeading';
 import { ServiceIcon } from '../ui/ServiceIcon';
 
@@ -44,8 +46,13 @@ export function TechnologyNetworkSection() {
         <motion.div
           {...inViewProps}
           variants={staggerFast}
-          className="mac-glass rounded-[2.25rem] p-3 sm:p-5"
+          className="mac-glass overflow-hidden rounded-[2.25rem] p-3 sm:p-5"
         >
+          <MediaPlaceholder
+            label="Healthcare operations dashboard"
+            src={dashboardImage}
+            className="mb-3 aspect-[2.35] w-full rounded-[1.45rem] object-[50%_44%]"
+          />
           <div className="rounded-[1.65rem] border border-white/80 bg-white/70 p-4 shadow-card backdrop-blur-2xl sm:p-6">
             <div className="flex flex-col gap-4 border-b border-primary/10 pb-5 sm:flex-row sm:items-center sm:justify-between">
               <div>

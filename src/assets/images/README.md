@@ -24,4 +24,6 @@ Composition notes:
 - Avoid obviously stock-looking handshakes, overly dark images, AI-looking faces, or fake medical claims.
 - Keep the subject centered or slightly right aligned for hero images so text and floating cards can sit comfortably.
 
+The site imports the web-ready copies from `src/assets/images/optimized/`. Keep the original files in this folder as source assets, then regenerate or replace the optimized copies when final images are approved.
+
 To use an image, import it in the relevant React section and pass it to `MediaPlaceholder` through the optional `src` prop.

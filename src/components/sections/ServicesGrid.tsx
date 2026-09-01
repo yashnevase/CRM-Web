@@ -1,6 +1,8 @@
 import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import corporateImage from '../../assets/images/optimized/service-corporate-healthcare.jpg';
+import diagnosticsImage from '../../assets/images/optimized/service-diagnostics.jpg';
 import { services, type ServiceItem } from '../../data/services';
 import { siteContent } from '../../data/site-content';
 import { fadeUp, inViewProps, staggerFast } from '../../lib/animations';
@@ -9,6 +11,11 @@ import { IconCircle } from '../ui/IconCircle';
 import { SectionHeading } from '../ui/SectionHeading';
 import { ServiceIcon } from '../ui/ServiceIcon';
 import { MediaPlaceholder } from '../ui/MediaPlaceholder';
+
+const serviceImages: Partial<Record<ServiceItem['icon'], string>> = {
+  flask: diagnosticsImage,
+  building: corporateImage,
+};
 
 export function ServicesGrid() {
   return (
@@ -27,8 +34,8 @@ export function ServicesGrid() {
           />
           <div className="hidden rounded-3xl border border-primary/10 bg-primary-soft/45 p-6 lg:block">
             <p className="text-sm font-bold leading-7 text-primary-dark">
-              Built as modular service areas, so final client copy and real photography can be
-              swapped in without redesigning the page.
+              Preventive care, diagnostics, workplace health and home healthcare are coordinated
+              through one clear service journey.
             </p>
           </div>
         </motion.div>
@@ -57,7 +64,8 @@ function ServiceCard({ service }: { service: ServiceItem }) {
         service.size === 'wide' && 'xl:col-span-2',
         service.variant === 'primary' && 'bg-primary text-white',
         service.variant === 'accent' && 'bg-accent text-primary-dark',
-        service.variant === 'light' && 'border border-line/70 bg-surface',
+        service.variant === 'light' &&
+          'border border-primary/10 bg-primary-soft/35 hover:bg-primary hover:text-white',
         media && 'text-white',
       )}
     >
@@ -66,9 +74,13 @@ function ServiceCard({ service }: { service: ServiceItem }) {
           <MediaPlaceholder
             label={service.mediaAlt ?? `${service.title} photography`}
             kind={service.icon === 'flask' ? 'lab' : 'care'}
-            className="absolute inset-0 h-full w-full transition duration-700 group-hover:scale-105"
+            src={serviceImages[service.icon]}
+            className={cn(
+              'absolute inset-0 h-full w-full transition duration-700 group-hover:scale-105',
+              service.icon === 'building' && 'object-[50%_20%]',
+            )}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/70 to-primary/5" />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/74 to-primary/12" />
         </>
       )}
       <div className="relative z-10 flex w-full flex-col items-start">
@@ -93,7 +105,9 @@ function ServiceCard({ service }: { service: ServiceItem }) {
           <p
             className={cn(
               'mt-3 max-w-md text-sm leading-6',
-              service.variant === 'light' ? 'text-muted' : 'text-current opacity-80',
+              service.variant === 'light'
+                ? 'text-muted transition-colors duration-500 group-hover:text-white/78'
+                : 'text-current opacity-[.86]',
             )}
           >
             {service.description}

@@ -6,9 +6,16 @@ interface MediaPlaceholderProps {
   kind?: 'care' | 'person' | 'lab';
   src?: string;
   className?: string;
+  loading?: 'eager' | 'lazy';
 }
 
-export function MediaPlaceholder({ label, kind = 'care', src, className }: MediaPlaceholderProps) {
+export function MediaPlaceholder({
+  label,
+  kind = 'care',
+  src,
+  className,
+  loading = 'lazy',
+}: MediaPlaceholderProps) {
   const icons = { care: Stethoscope, person: UserRound, lab: FlaskConical };
   const Icon = icons[kind];
 
@@ -20,7 +27,7 @@ export function MediaPlaceholder({ label, kind = 'care', src, className }: Media
         width="1200"
         height="900"
         className={cn('object-cover', className)}
-        loading="lazy"
+        loading={loading}
       />
     );
   }

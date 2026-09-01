@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import heroImage from '../../assets/images/optimized/hero-healthcare-professional.jpg';
 import { siteContent } from '../../data/site-content';
 import { fadeUp, staggerContainer } from '../../lib/animations';
 import { GlassCard } from '../ui/GlassCard';
@@ -21,7 +22,7 @@ export function Hero() {
 
   return (
     <section
-      className="frosted-stage relative overflow-hidden pb-12 pt-28 sm:pt-32 lg:min-h-[760px] lg:pb-16 lg:pt-30"
+      className="frosted-stage relative overflow-hidden pb-12 pt-28 sm:pt-32 lg:min-h-[760px] lg:pb-16 lg:pt-32"
       aria-labelledby="hero-title"
     >
       <div className="quiet-grid pointer-events-none absolute inset-0 opacity-55" />
@@ -67,14 +68,14 @@ export function Hero() {
             <motion.div variants={fadeUp} className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 to="/services"
-                className="focus-ring group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-extrabold text-white shadow-glass transition duration-500 hover:-translate-y-0.5 hover:bg-primary-dark"
+                className="focus-ring group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary-dark px-6 py-3.5 text-sm font-extrabold text-white shadow-glass transition duration-500 hover:-translate-y-0.5 hover:bg-primary"
               >
                 {siteContent.common.explore}
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
               <Link
                 to="/contact"
-                className="focus-ring inline-flex min-h-12 items-center justify-center rounded-full border border-white/80 bg-white/[.66] px-6 py-3.5 text-sm font-extrabold text-primary-dark shadow-card backdrop-blur-xl transition duration-500 hover:-translate-y-0.5 hover:bg-white"
+                className="focus-ring inline-flex min-h-12 items-center justify-center rounded-full border border-primary/18 bg-white px-6 py-3.5 text-sm font-extrabold text-primary-dark shadow-card backdrop-blur-xl transition duration-500 hover:-translate-y-0.5 hover:border-primary/30"
               >
                 {siteContent.common.partner}
               </Link>
@@ -103,16 +104,18 @@ export function Hero() {
               <MediaPlaceholder
                 label={content.visualLabel}
                 kind="person"
-                className="aspect-[1.28] w-full rounded-[1.8rem] lg:aspect-[.9]"
+                src={heroImage}
+                loading="eager"
+                className="aspect-[1.28] w-full rounded-[1.8rem] object-[50%_22%] lg:aspect-[.9]"
               />
             </div>
 
-            <FloatingBadge className="-left-2 top-[14%] sm:-left-10" delay={0}>
+            <FloatingBadge className="left-3 top-[14%] sm:-left-5" delay={0}>
               <ShieldCheck className="h-5 w-5 text-accent-strong" />
               <span>{content.badges.technology}</span>
             </FloatingBadge>
 
-            <FloatingBadge className="right-1 top-8 sm:-right-8" delay={0.45}>
+            <FloatingBadge className="right-3 top-8 sm:-right-4" delay={0.45}>
               <MapPinned className="h-5 w-5 text-primary" />
               <span>{content.badges.network}</span>
             </FloatingBadge>
@@ -120,7 +123,7 @@ export function Hero() {
             <motion.div
               animate={{ y: [5, -5, 5] }}
               transition={{ duration: 6.4, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -bottom-8 left-5 right-5 hidden sm:left-12 sm:right-12 sm:block"
+              className="absolute bottom-5 left-5 right-5 hidden sm:left-12 sm:right-12 sm:block"
             >
               <GlassCard className="flex items-center justify-between gap-3 rounded-2xl px-4 py-3.5 sm:px-5">
                 <div className="flex -space-x-2">
@@ -148,17 +151,26 @@ export function Hero() {
           className="mt-10 grid grid-cols-3 gap-2 sm:gap-4 lg:-mt-2 lg:max-w-[86%]"
         >
           {content.serviceTiles.map((tile, index) => (
-            <motion.article
+            <motion.div
               variants={fadeUp}
               key={tile}
-              className={`interactive-card mac-glass group flex min-h-[116px] flex-col justify-between overflow-hidden rounded-3xl p-3 sm:min-h-[138px] sm:flex-row sm:items-end sm:p-5 ${
-                index === 2 ? 'bg-primary text-white' : ''
+              className={`interactive-card mac-glass group flex min-h-[116px] flex-col justify-between overflow-hidden rounded-3xl p-3 transition-colors duration-500 sm:min-h-[138px] sm:flex-row sm:items-end sm:p-5 ${
+                index === 2
+                  ? 'bg-primary text-white hover:bg-accent hover:text-primary-dark'
+                  : 'hover:bg-primary hover:text-white'
               }`}
             >
-              <div>
+              <Link
+                to={index === 1 ? '/#home-care' : index === 2 ? '/#corporate' : '/services'}
+                className="absolute inset-0 z-20 rounded-3xl focus-ring"
+                aria-label={`View ${tile}`}
+              />
+              <div className="relative z-10">
                 <span
                   className={`mb-4 flex h-9 w-9 items-center justify-center rounded-full sm:mb-5 sm:h-11 sm:w-11 ${
-                    index === 2 ? 'bg-white text-primary' : 'bg-primary-soft text-primary'
+                    index === 2
+                      ? 'bg-white text-primary group-hover:bg-primary-dark group-hover:text-white'
+                      : 'bg-primary-soft text-primary group-hover:bg-white group-hover:text-primary'
                   }`}
                 >
                   <ServiceIcon
@@ -171,12 +183,14 @@ export function Hero() {
               </div>
               <span
                 className={`ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition duration-500 group-hover:rotate-45 sm:h-12 sm:w-12 ${
-                  index === 2 ? 'bg-white text-primary' : 'bg-accent text-ink'
+                  index === 2
+                    ? 'bg-white text-primary group-hover:bg-primary-dark group-hover:text-white'
+                    : 'bg-accent text-ink'
                 }`}
               >
                 <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5" />
               </span>
-            </motion.article>
+            </motion.div>
           ))}
         </motion.div>
       </div>

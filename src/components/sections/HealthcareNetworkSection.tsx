@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import networkImage from '../../assets/images/optimized/network-partners.jpg';
 import { networkPartners } from '../../data/company';
 import { siteContent } from '../../data/site-content';
 import { fadeUp, inViewProps, staggerFast } from '../../lib/animations';
+import { MediaPlaceholder } from '../ui/MediaPlaceholder';
 import { ServiceIcon } from '../ui/ServiceIcon';
 
 export function HealthcareNetworkSection() {
@@ -33,28 +35,37 @@ export function HealthcareNetworkSection() {
         <motion.div
           {...inViewProps}
           variants={staggerFast}
-          className="mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-4"
+          className="mt-12 grid gap-5 lg:grid-cols-[.9fr_1.1fr]"
         >
-          {networkPartners.map((item, index) => (
-            <motion.article
-              variants={fadeUp}
-              whileHover={{ y: -5 }}
-              key={item.title}
-              className="mac-glass group rounded-3xl p-6 transition duration-500 hover:bg-white/80"
-            >
-              <div className="flex items-center justify-between">
-                <span className="font-display text-sm font-bold text-primary/50">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-primary shadow-card">
-                  <ServiceIcon name={item.icon} className="h-5 w-5" />
-                </span>
-              </div>
-              <h3 className="mt-9 text-xl font-bold text-primary-dark">{item.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-muted">{item.description}</p>
-              <ArrowUpRight className="mt-6 h-4 w-4 text-primary/40 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary" />
-            </motion.article>
-          ))}
+          <motion.div variants={fadeUp} className="mac-glass overflow-hidden rounded-[2rem] p-3">
+            <MediaPlaceholder
+              label="Healthcare partner network"
+              src={networkImage}
+              className="aspect-[1.18] w-full rounded-[1.45rem] object-[50%_46%]"
+            />
+          </motion.div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {networkPartners.map((item, index) => (
+              <motion.article
+                variants={fadeUp}
+                whileHover={{ y: -5 }}
+                key={item.title}
+                className="mac-glass group rounded-3xl p-6 transition duration-500 hover:bg-white/80"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-display text-sm font-bold text-primary/50">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-primary shadow-card">
+                    <ServiceIcon name={item.icon} className="h-5 w-5" />
+                  </span>
+                </div>
+                <h3 className="mt-9 text-xl font-bold text-primary-dark">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-muted">{item.description}</p>
+                <ArrowUpRight className="mt-6 h-4 w-4 text-primary/40 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary" />
+              </motion.article>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

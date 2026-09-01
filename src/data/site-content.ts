@@ -20,7 +20,7 @@ export const siteContent = {
       'From preventive health assessments and diagnostics to home healthcare and corporate programs, one coordinated ecosystem makes every care journey easier to access and manage.',
     features: ['Individuals', 'Corporates', 'Insurers', 'Healthcare partners'],
     imageAlt: 'Healthcare professional representing connected healthcare services',
-    visualLabel: 'Add hero-healthcare-professional.jpg',
+    visualLabel: 'Healthcare professional representing LifeMed Connect services',
     badges: {
       technology: 'Request to report visibility',
       network: 'Multi-city service network',
@@ -43,7 +43,7 @@ export const siteContent = {
       'Healthcare network management',
     ],
     imageAlt: 'Healthcare professional coordinating a patient care journey',
-    visualLabel: 'Add about-care-coordination.jpg',
+    visualLabel: 'Healthcare team coordinating patient and client services',
     mission: {
       title: 'Our mission',
       text: 'To make quality healthcare accessible, organized and easier to coordinate.',

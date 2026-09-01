@@ -100,10 +100,11 @@
   }
   .quiet-grid {
     background-image:
-      linear-gradient(rgb(var(--color-primary) / 0.07) 1px, transparent 1px),
-      linear-gradient(90deg, rgb(var(--color-primary) / 0.07) 1px, transparent 1px);
-    background-size: 42px 42px;
-    mask-image: linear-gradient(to bottom, transparent, black 18%, black 78%, transparent);
+      linear-gradient(rgb(var(--color-primary) / 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--color-primary) / 0.08) 1px, transparent 1px);
+    animation: grid-drift 18s ease-in-out infinite alternate;
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse at center, black 0%, black 42%, transparent 78%);
   }
   .frosted-stage {
     background:
@@ -140,6 +141,15 @@
   }
   .focus-ring {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+}
+
+@keyframes grid-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 22px 18px;
   }
 }
 

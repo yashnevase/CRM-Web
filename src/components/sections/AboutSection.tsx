@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Check, HeartHandshake, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import aboutImage from '../../assets/images/optimized/about-care-coordination.jpg';
 import { siteContent } from '../../data/site-content';
 import { fadeUp, inViewProps, staggerFast } from '../../lib/animations';
 import { MediaPlaceholder } from '../ui/MediaPlaceholder';
@@ -15,6 +16,7 @@ export function AboutSection() {
           <div className="mac-glass overflow-hidden rounded-[2.4rem] p-3">
             <MediaPlaceholder
               label={content.visualLabel}
+              src={aboutImage}
               className="aspect-[1.02] w-full rounded-[1.8rem]"
             />
           </div>
