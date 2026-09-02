@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import corporateCareImage from '../../assets/images/optimized/care-corporate-program.jpg';
-import homeCareImage from '../../assets/images/optimized/care-home-healthcare.jpg';
-import occupationalCareImage from '../../assets/images/optimized/care-occupational-health.jpg';
+import corporateCareImage from '../../assets/images/optimized/corporate-healthcare.jpg';
+import homeCareImage from '../../assets/images/optimized/home-healthcare.jpg';
+import occupationalCareImage from '../../assets/images/optimized/occupational-health.jpg';
 import { carePrograms, type CareProgram } from '../../data/services';
 import { siteContent } from '../../data/site-content';
 import { fadeUp, inViewProps, staggerFast } from '../../lib/animations';

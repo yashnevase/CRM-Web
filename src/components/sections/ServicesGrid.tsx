@@ -1,8 +1,10 @@
 import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import corporateImage from '../../assets/images/optimized/service-corporate-healthcare.jpg';
-import diagnosticsImage from '../../assets/images/optimized/service-diagnostics.jpg';
+import corporateImage from '../../assets/images/optimized/corporate-healthcare.jpg';
+import diagnosticsImage from '../../assets/images/optimized/diagnostic-lab.jpg';
+import preventiveImage from '../../assets/images/optimized/preventive-health-checkup.jpg';
+import homeCareImage from '../../assets/images/optimized/home-healthcare.jpg';
 import { services, type ServiceItem } from '../../data/services';
 import { siteContent } from '../../data/site-content';
 import { fadeUp, inViewProps, staggerFast } from '../../lib/animations';
@@ -13,7 +15,9 @@ import { ServiceIcon } from '../ui/ServiceIcon';
 import { MediaPlaceholder } from '../ui/MediaPlaceholder';
 
 const serviceImages: Partial<Record<ServiceItem['icon'], string>> = {
+  clipboard: preventiveImage,
   flask: diagnosticsImage,
+  home: homeCareImage,
   building: corporateImage,
 };
 
@@ -54,7 +58,7 @@ export function ServicesGrid() {
 }
 
 function ServiceCard({ service }: { service: ServiceItem }) {
-  const media = service.variant === 'media';
+  const media = Boolean(serviceImages[service.icon]);
   return (
     <motion.article
       variants={fadeUp}
