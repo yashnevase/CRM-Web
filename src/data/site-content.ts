@@ -12,7 +12,8 @@ export const siteContent = {
   },
   hero: {
     eyebrow: 'Healthcare coordination platform',
-    title: 'LifeMed Connect',
+    title: 'LifeMed',
+    titleAccent: 'Connect',
     accent: 'care, programs and partners in one flow.',
     description:
       'LifeMed Connect delivers reliable, accessible and professionally managed healthcare solutions for individuals, corporates, insurers, institutions and healthcare partners.',

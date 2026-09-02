@@ -43,7 +43,9 @@ export function Hero() {
               variants={fadeUp}
               className="mt-5 max-w-4xl text-5xl font-black leading-none text-primary-dark sm:text-6xl lg:text-7xl"
             >
-              {content.title}
+              <span>{content.title} </span>
+              <span className="text-accent">{content.titleAccent}</span>
+
             </motion.h1>
             <motion.p
               variants={fadeUp}
@@ -154,11 +156,10 @@ export function Hero() {
             <motion.div
               variants={fadeUp}
               key={tile}
-              className={`interactive-card mac-glass group flex min-h-[116px] flex-col justify-between overflow-hidden rounded-3xl p-3 transition-colors duration-500 sm:min-h-[138px] sm:flex-row sm:items-end sm:p-5 ${
-                index === 2
-                  ? 'bg-primary text-white hover:bg-accent hover:text-primary-dark'
-                  : 'hover:bg-primary hover:text-white'
-              }`}
+              className={`interactive-card mac-glass group flex min-h-[116px] flex-col justify-between overflow-hidden rounded-3xl p-3 transition-colors duration-500 sm:min-h-[138px] sm:flex-row sm:items-end sm:p-5 ${index === 2
+                ? 'bg-primary text-white hover:bg-accent hover:text-primary-dark'
+                : 'hover:bg-primary hover:text-white'
+                }`}
             >
               <Link
                 to={index === 1 ? '/#home-care' : index === 2 ? '/#corporate' : '/services'}
@@ -167,11 +168,10 @@ export function Hero() {
               />
               <div className="relative z-10">
                 <span
-                  className={`mb-4 flex h-9 w-9 items-center justify-center rounded-full sm:mb-5 sm:h-11 sm:w-11 ${
-                    index === 2
-                      ? 'bg-white text-primary group-hover:bg-primary-dark group-hover:text-white'
-                      : 'bg-primary-soft text-primary group-hover:bg-white group-hover:text-primary'
-                  }`}
+                  className={`mb-4 flex h-9 w-9 items-center justify-center rounded-full sm:mb-5 sm:h-11 sm:w-11 ${index === 2
+                    ? 'bg-white text-primary group-hover:bg-primary-dark group-hover:text-white'
+                    : 'bg-primary-soft text-primary group-hover:bg-white group-hover:text-primary'
+                    }`}
                 >
                   <ServiceIcon
                     name={index === 0 ? 'clipboard' : index === 1 ? 'home' : 'building'}
@@ -182,11 +182,10 @@ export function Hero() {
                 </h2>
               </div>
               <span
-                className={`ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition duration-500 group-hover:rotate-45 sm:h-12 sm:w-12 ${
-                  index === 2
-                    ? 'bg-white text-primary group-hover:bg-primary-dark group-hover:text-white'
-                    : 'bg-accent text-ink'
-                }`}
+                className={`ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition duration-500 group-hover:rotate-45 sm:h-12 sm:w-12 ${index === 2
+                  ? 'bg-white text-primary group-hover:bg-primary-dark group-hover:text-white'
+                  : 'bg-accent text-ink'
+                  }`}
               >
                 <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5" />
               </span>
