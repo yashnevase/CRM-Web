@@ -11,6 +11,7 @@ export function PageHero({ eyebrow, title, description }: PageHeroProps) {
   return (
     <header className="relative overflow-hidden bg-hero-mesh pb-20 pt-36 sm:pb-24 sm:pt-44">
       <div className="quiet-grid pointer-events-none absolute inset-0 opacity-60" />
+      
       <motion.div
         {...inViewProps}
         variants={staggerContainer}
