@@ -79,7 +79,7 @@ export function AboutSection() {
       <motion.div
         {...inViewProps}
         variants={staggerFast}
-        className="page-shell mt-20 grid gap-5 md:grid-cols-2"
+        className="page-shell mt-12 grid gap-5 md:grid-cols-2 lg:mt-14"
       >
         <PurposeCard icon={Target} title={content.mission.title} text={content.mission.text} />
         <PurposeCard
@@ -102,12 +102,46 @@ function PurposeCard({
   text: string;
 }) {
   return (
-    <motion.article variants={fadeUp} className="soft-panel rounded-3xl p-6 sm:p-8">
-      <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-soft text-accent-strong">
+    <motion.article
+      variants={fadeUp}
+      className="
+        interactive-card
+        mac-glass
+        group
+        relative
+        overflow-hidden
+        rounded-3xl
+        bg-primary
+        p-5
+        text-white
+        shadow-[0_12px_35px_rgba(20,60,90,0.14)]
+        transition-all
+        duration-500
+        hover:-translate-y-1
+        hover:bg-primary
+        hover:shadow-[0_20px_50px_rgba(20,60,90,0.20)]
+        sm:p-6
+      "
+    >
+      <span
+        className="
+          flex h-12 w-12 items-center justify-center
+          rounded-2xl
+          bg-white/95
+          text-primary
+          shadow-[0_6px_18px_rgba(0,0,0,0.08)]
+          transition-all duration-500
+          group-hover:scale-105
+          group-hover:bg-accent
+          group-hover:text-white
+        "
+      >
         <Icon className="h-5 w-5" />
       </span>
-      <h3 className="mt-6 text-xl font-bold text-primary-dark">{title}</h3>
-      <p className="mt-3 max-w-xl text-sm leading-6 text-muted">{text}</p>
+
+      <h3 className="mt-6 text-xl font-bold text-white">{title}</h3>
+
+      <p className="mt-3 max-w-xl text-sm leading-6 text-white/75">{text}</p>
     </motion.article>
   );
 }

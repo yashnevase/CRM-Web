@@ -6,7 +6,7 @@ import { MetricCounter } from '../ui/MetricCounter';
 
 export function TrustStrip() {
   return (
-    <section className="relative z-10 -mt-12" aria-label="Why clients can rely on us">
+    <section className="relative z-10" aria-label="Why clients can rely on us">
       <div className="page-shell">
         <motion.div
           {...inViewProps}
