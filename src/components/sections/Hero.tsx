@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
 import {
   ArrowUpRight,
   Building2,
@@ -19,6 +20,16 @@ import { ServiceIcon } from '../ui/ServiceIcon';
 
 export function Hero() {
   const content = siteContent.hero;
+  const [audience, setAudience] = useState<'Individuals' | 'Corporates' | 'Insurers'>(
+    'Individuals',
+  );
+  const audienceCopy = {
+    Individuals: 'Personalised support, diagnostics and care at home—coordinated around you.',
+    Corporates:
+      'Preventive programmes, workforce wellbeing and clear reporting for every location.',
+    Insurers:
+      'Reliable provider coordination and structured visibility across every claim journey.',
+  } as const;
 
   return (
     <section
@@ -45,7 +56,6 @@ export function Hero() {
             >
               <span>{content.title} </span>
               <span className="text-accent">{content.titleAccent}</span>
-
             </motion.h1>
             <motion.p
               variants={fadeUp}
@@ -60,6 +70,39 @@ export function Hero() {
             >
               {content.description}
             </motion.p>
+            <motion.div variants={fadeUp} className="mt-6">
+              <div
+                className="inline-flex rounded-full border border-primary/15 bg-white/65 p-1 shadow-card backdrop-blur-xl"
+                role="tablist"
+                aria-label="Choose your audience"
+              >
+                {(Object.keys(audienceCopy) as Array<keyof typeof audienceCopy>).map((item) => (
+                  <button
+                    key={item}
+                    type="button"
+                    role="tab"
+                    aria-selected={audience === item}
+                    onClick={() => setAudience(item)}
+                    className={`focus-ring rounded-full px-3 py-2 text-xs font-extrabold transition sm:px-4 ${audience === item ? 'bg-primary-dark text-white shadow-glow' : 'text-primary-dark/70 hover:bg-primary-soft/60'}`}
+                  >
+                    For {item}
+                  </button>
+                ))}
+              </div>
+              <div className="relative mt-3 min-h-7 max-w-xl text-sm font-semibold text-primary-dark/75">
+                <AnimatePresence mode="wait">
+                  <motion.p
+                    key={audience}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    {audienceCopy[audience]}
+                  </motion.p>
+                </AnimatePresence>
+              </div>
+            </motion.div>
             <motion.p
               variants={fadeUp}
               className="mt-4 hidden max-w-2xl text-sm leading-7 text-muted sm:block"
@@ -156,10 +199,11 @@ export function Hero() {
             <motion.div
               variants={fadeUp}
               key={tile}
-              className={`interactive-card mac-glass group flex min-h-[116px] flex-col justify-between overflow-hidden rounded-3xl p-3 transition-colors duration-500 sm:min-h-[138px] sm:flex-row sm:items-end sm:p-5 ${index === 2
-                ? 'bg-primary text-white hover:bg-accent hover:text-primary-dark'
-                : 'hover:bg-primary hover:text-white'
-                }`}
+              className={`interactive-card mac-glass group flex min-h-[116px] flex-col justify-between overflow-hidden rounded-3xl p-3 transition-colors duration-500 sm:min-h-[138px] sm:flex-row sm:items-end sm:p-5 ${
+                index === 2
+                  ? 'bg-primary text-white hover:bg-accent hover:text-primary-dark'
+                  : 'hover:bg-primary hover:text-white'
+              }`}
             >
               <Link
                 to={index === 1 ? '/#home-care' : index === 2 ? '/#corporate' : '/services'}
@@ -168,10 +212,11 @@ export function Hero() {
               />
               <div className="relative z-10">
                 <span
-                  className={`mb-4 flex h-9 w-9 items-center justify-center rounded-full sm:mb-5 sm:h-11 sm:w-11 ${index === 2
-                    ? 'bg-white text-primary group-hover:bg-primary-dark group-hover:text-white'
-                    : 'bg-primary-soft text-primary group-hover:bg-white group-hover:text-primary'
-                    }`}
+                  className={`mb-4 flex h-9 w-9 items-center justify-center rounded-full sm:mb-5 sm:h-11 sm:w-11 ${
+                    index === 2
+                      ? 'bg-white text-primary group-hover:bg-primary-dark group-hover:text-white'
+                      : 'bg-primary-soft text-primary group-hover:bg-white group-hover:text-primary'
+                  }`}
                 >
                   <ServiceIcon
                     name={index === 0 ? 'clipboard' : index === 1 ? 'home' : 'building'}
@@ -182,10 +227,11 @@ export function Hero() {
                 </h2>
               </div>
               <span
-                className={`ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition duration-500 group-hover:rotate-45 sm:h-12 sm:w-12 ${index === 2
-                  ? 'bg-white text-primary group-hover:bg-primary-dark group-hover:text-white'
-                  : 'bg-accent text-ink'
-                  }`}
+                className={`ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition duration-500 group-hover:rotate-45 sm:h-12 sm:w-12 ${
+                  index === 2
+                    ? 'bg-white text-primary group-hover:bg-primary-dark group-hover:text-white'
+                    : 'bg-accent text-ink'
+                }`}
               >
                 <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5" />
               </span>

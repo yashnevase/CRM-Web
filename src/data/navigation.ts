@@ -1,12 +1,9 @@
 export const navigation = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
-  { label: 'Corporate', href: '/#corporate' },
-  { label: 'Home care', href: '/#home-care' },
-  { label: 'Network', href: '/#network' },
-  { label: 'Technology', href: '/#technology' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Solutions', href: '/#corporate' },
+  { label: 'Partners', href: '/#network' },
+  { label: 'About us', href: '/about' },
 ];
 
 export const footerNavigation = {

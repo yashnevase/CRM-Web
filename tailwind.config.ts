@@ -7,6 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
+        teal: { DEFAULT: '#005B60', deep: '#00383C' },
+        amber: { DEFAULT: '#FFB800' },
         primary: {
           DEFAULT: color('primary'),
           dark: color('primary-dark'),

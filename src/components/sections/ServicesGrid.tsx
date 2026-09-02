@@ -42,7 +42,7 @@ export function ServicesGrid() {
         <motion.div
           {...inViewProps}
           variants={staggerFast}
-          className="mt-12 grid auto-rows-[minmax(260px,auto)] gap-4 md:grid-cols-2 xl:grid-cols-4"
+          className="mt-12 grid auto-rows-[minmax(260px,auto)] gap-5 md:grid-cols-3"
         >
           {services.map((service) => (
             <ServiceCard key={service.title} service={service} />
@@ -60,12 +60,11 @@ function ServiceCard({ service }: { service: ServiceItem }) {
       variants={fadeUp}
       whileHover={{ y: -5 }}
       className={cn(
-        'interactive-card group relative flex overflow-hidden rounded-3xl p-6 shadow-card sm:p-7',
-        service.size === 'wide' && 'xl:col-span-2',
+        'interactive-card group relative flex overflow-hidden rounded-3xl border border-white/70 p-6 shadow-card sm:p-7',
+        service.size === 'wide' && 'md:col-span-2',
         service.variant === 'primary' && 'bg-primary text-white',
         service.variant === 'accent' && 'bg-accent text-primary-dark',
-        service.variant === 'light' &&
-          'border border-primary/10 bg-primary-soft/35 hover:bg-primary hover:text-white',
+        service.variant === 'light' && 'bg-primary-soft/35 hover:bg-primary hover:text-white',
         media && 'text-white',
       )}
     >

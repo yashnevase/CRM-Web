@@ -44,7 +44,7 @@ export function Navbar() {
               className="h-12 w-auto sm:h-14"
             />
           </Link>
-          <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Primary navigation">
+          <nav className="hidden items-center gap-0.5 md:flex" aria-label="Primary navigation">
             {navigation.map((item) => (
               <NavLink
                 key={item.label}
@@ -63,19 +63,19 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <Link
               to="/contact"
-              className="focus-ring hidden rounded-full border border-primary/20 bg-white/60 px-4 py-3 text-sm font-bold text-primary backdrop-blur-2xl transition duration-500 hover:bg-white xl:inline-flex"
+              className="focus-ring hidden rounded-full border border-primary/20 bg-white/60 px-4 py-3 text-sm font-bold text-primary backdrop-blur-2xl transition duration-500 hover:bg-white lg:inline-flex"
             >
               {siteContent.common.partner}
             </Link>
             <Link
               to="/contact"
-              className="focus-ring hidden rounded-full bg-accent px-5 py-3 text-sm font-extrabold text-ink shadow-glow transition duration-500 hover:scale-[1.025] hover:bg-accent-strong md:inline-flex"
+              className="focus-ring rounded-full bg-accent px-5 py-3 text-sm font-extrabold text-ink shadow-glow transition duration-500 hover:scale-[1.025] hover:bg-accent-strong"
             >
               {siteContent.common.book}
             </Link>
             <button
               onClick={() => setOpen(true)}
-              className="focus-ring rounded-full border border-line/70 bg-white/70 p-3 xl:hidden"
+              className="focus-ring rounded-full border border-line/70 bg-white/70 p-3 md:hidden"
               aria-label="Open navigation"
             >
               <Menu className="h-5 w-5" />
