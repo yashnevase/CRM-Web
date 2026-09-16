@@ -3,7 +3,7 @@ export const siteContent = {
     name: 'VitalSym',
     legalName: 'VitalSym Healthcare Private Limited',
     descriptor: 'Connecting Healthcare. Delivering Better Care.',
-    shortDescriptor: 'Healthcare, connected',
+    shortDescriptor: 'Connecting Healthcare. Delivering Better Care.',
   },
   common: {
     book: 'Book a Service',
