@@ -7,8 +7,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        teal: { DEFAULT: '#005B60', deep: '#00383C' },
-        amber: { DEFAULT: '#FFB800' },
         primary: {
           DEFAULT: color('primary'),
           dark: color('primary-dark'),
@@ -48,7 +46,7 @@ export default {
         'hero-mesh':
           'linear-gradient(125deg, rgb(var(--color-primary-soft)) 0%, rgb(var(--color-canvas)) 34%, rgb(var(--color-surface)) 66%, rgb(var(--color-accent-soft)) 100%)',
         'deep-gradient':
-          'linear-gradient(135deg, rgb(8 107 121), rgb(10 127 143) 58%, rgb(10 155 171))',
+          'linear-gradient(135deg, rgb(var(--color-primary-dark)), rgb(var(--color-primary)) 58%, rgb(var(--color-primary) / .78))',
       },
     },
   },

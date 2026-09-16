@@ -128,7 +128,7 @@ function CareProgramCard({ program, featured }: { program: CareProgram; featured
         </ul>
 
         <Link
-          to="/contact"
+          to={`/contact?source=${program.anchor}-enquiry`}
           className={cn(
             'focus-ring mt-7 inline-flex items-center gap-2 rounded-xl text-sm font-extrabold',
             dark ? 'text-accent' : 'text-primary',

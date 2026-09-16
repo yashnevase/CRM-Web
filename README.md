@@ -1,64 +1,41 @@
-# LifeMed Connect React Template
+# VitalSym Healthcare Website
 
-A maintainable React website scaffold for LifeMed Connect. It follows the supplied healthcare-services brief and uses React, Vite, TypeScript, Tailwind CSS, Framer Motion, and local content data.
+A maintainable React website for VitalSym Healthcare Private Limited. The project uses React, TypeScript, Vite, Tailwind CSS, Framer Motion, Lucide icons, and local optimized images.
 
-## Setup
+## Run locally
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-Useful commands:
+Quality checks:
 
 ```bash
 pnpm typecheck
 pnpm lint
 pnpm build
-pnpm preview
 ```
 
-## Where To Edit
+## Where to edit
 
-Most day-to-day changes live in `src/data`:
+- `src/data/site-content.ts` - company name, page messaging, calls to action, and footer copy.
+- `src/data/services.ts` - service cards, detailed service lists, and healthcare programs.
+- `src/data/company.ts` - trust points, technology capabilities, network groups, values, and differentiators.
+- `src/data/navigation.ts` - header and footer navigation.
+- `src/pages/Home.tsx` - homepage section order.
+- `src/styles/globals.css` - the single source for brand colors and shared glass styling.
 
-- `site-content.ts` controls section headings, paragraphs, CTA labels, and footer text.
-- `services.ts` controls service cards and the home, corporate, and occupational-health modules.
-- `company.ts` controls trust points, technology capabilities, partners, values, and reasons to choose the company.
-- `process-steps.ts` controls the four-step process section.
-- `navigation.ts` controls header and footer links.
+## Brand and theme
 
-Page layout lives in `src/pages/Home.tsx`. You can reorder or remove sections there without changing the section components.
+All brand colors are CSS variables at the top of `src/styles/globals.css`. Tailwind maps those variables to readable classes such as `bg-primary`, `text-primary-dark`, `bg-accent`, and `shadow-glass`. Change the variables once to update the palette across the website; the glass, blur, radius, and shadow system remains unchanged.
 
-## Images
+The displayed company name and descriptor come from `siteContent.brand`. The code-rendered brand mark is in `src/components/ui/BrandLogo.tsx`, so the header, drawer, and footer always stay consistent.
 
-The current site does not load placeholder photos from external URLs. Image spaces use the reusable `MediaPlaceholder` component until approved assets are available.
+## Content and images
 
-Add final files to `src/assets/images`, import them into the relevant section, and pass the imported file to the component's `src` prop. Keep descriptive `alt` text in the existing `label` prop.
+Website images are stored in `src/assets/images`; components load the smaller web-ready copies from `src/assets/images/optimized`. The original files are retained only as source assets for future cropping or recompression.
 
-## Brand Palette
+The enquiry form is front-end only. Connect its submit handler to the final CRM or lead-management endpoint when that system is selected. The hidden `source` field is already included for lead attribution.
 
-The project uses one fixed LifeMed Connect palette:
-
-- Primary teal: `#0A7F8F` and `#089BAB`
-- Soft blue: `#D6E7F1`
-- Warm accent: `#FFAD52` and `#E89940`
-- Cream surfaces: `#FFF3E6` and `#FFFBF5`
-- Neutral text and borders: `#111111`, `#8A96BC`, `#C5C5C5`, `#F7F8F8`
-
-Theme colors are defined as CSS variables in `src/styles/globals.css`. Tailwind maps those variables in `tailwind.config.ts`, so components use readable classes like `bg-primary`, `text-muted`, `bg-accent`, and `shadow-glass`.
-
-## Project Structure
-
-- `src/components/ui` contains small reusable components.
-- `src/components/layout` contains the navbar, mobile drawer, and footer.
-- `src/components/sections` contains complete website sections.
-- `src/data` contains all mock content.
-- `src/hooks` contains the navbar scroll-position hook.
-- `src/lib` contains shared animation and class helpers.
-- `src/pages` contains route pages.
-- `src/styles` contains global styles and theme variables.
-
-Motion settings are centralized in `src/lib/animations.ts` and respect reduced-motion preferences.
-
-An artificial full-page loader is intentionally not included. The static homepage should render immediately; section reveals and image placeholders provide visual continuity without delaying content or hurting Lighthouse performance.
+An artificial loading screen is intentionally omitted so visitors see useful content immediately and Lighthouse performance is not delayed.

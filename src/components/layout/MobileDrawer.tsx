@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/lifemed-connect-logo.png';
 import { navigation } from '../../data/navigation';
 import { siteContent } from '../../data/site-content';
 import { fadeUp, slideDrawer, staggerContainer } from '../../lib/animations';
+import { BrandLogo } from '../ui/BrandLogo';
 
 interface MobileDrawerProps {
   onClose: () => void;
@@ -32,7 +32,7 @@ export function MobileDrawer({ onClose }: MobileDrawerProps) {
         role="dialog"
       >
         <div className="flex items-center justify-between">
-          <img src={logo} alt="LifeMed Connect" className="h-12 w-auto" />
+          <BrandLogo />
           <button
             onClick={onClose}
             className="focus-ring rounded-full bg-white p-3 text-ink shadow-card"
@@ -60,7 +60,7 @@ export function MobileDrawer({ onClose }: MobileDrawerProps) {
           <p className="mt-2 font-display text-lg font-bold">{siteContent.cta.title}</p>
           <Link
             onClick={onClose}
-            to="/contact"
+            to="/contact?source=book-a-service"
             className="focus-ring mt-4 inline-flex rounded-full bg-accent px-5 py-3 text-sm font-extrabold text-ink"
           >
             {siteContent.common.book}

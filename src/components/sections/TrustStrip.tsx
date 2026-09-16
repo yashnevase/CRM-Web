@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { supportPoints } from '../../data/company';
 import { fadeUp, inViewProps, staggerFast } from '../../lib/animations';
 import { ServiceIcon } from '../ui/ServiceIcon';
-import { MetricCounter } from '../ui/MetricCounter';
 
 export function TrustStrip() {
   return (
@@ -31,13 +30,6 @@ export function TrustStrip() {
             </motion.article>
           ))}
         </motion.div>
-      </div>
-      <div className="page-shell mt-4">
-        <div className="soft-panel grid grid-cols-3 gap-3 rounded-3xl px-4 py-5 sm:gap-6 sm:px-8">
-          <MetricCounter value={50000} suffix="+" label="Lives covered" />
-          <MetricCounter value={500} suffix="+" label="Diagnostic partners" />
-          <MetricCounter value={99.4} decimals={1} suffix="%" label="SLA adherence" />
-        </div>
       </div>
     </section>
   );

@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu } from 'lucide-react';
 import { Link, NavLink } from 'react-router-dom';
-import logo from '../../assets/lifemed-connect-logo.png';
 import { navigation } from '../../data/navigation';
 import { siteContent } from '../../data/site-content';
 import { useScrollPosition } from '../../hooks/useScrollPosition';
 import { cn } from '../../lib/cn';
 import { MobileDrawer } from './MobileDrawer';
+import { BrandLogo } from '../ui/BrandLogo';
 
 export function Navbar() {
   const scrollY = useScrollPosition();
@@ -34,24 +34,18 @@ export function Navbar() {
           <Link
             to="/"
             className="focus-ring flex items-center rounded-xl"
-            aria-label="LifeMed Connect home"
+            aria-label={`${siteContent.brand.name} home`}
           >
-            <img
-              src={logo}
-              alt="LifeMed Connect"
-              width="540"
-              height="161"
-              className="h-12 w-auto sm:h-14"
-            />
+            <BrandLogo />
           </Link>
-          <nav className="hidden items-center gap-0.5 md:flex" aria-label="Primary navigation">
+          <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Primary navigation">
             {navigation.map((item) => (
               <NavLink
                 key={item.label}
                 to={item.href}
                 className={({ isActive }) =>
                   cn(
-                    'focus-ring rounded-full px-3 py-2 text-sm font-semibold transition-colors hover:bg-white/70 hover:text-primary',
+                    'focus-ring rounded-full px-2.5 py-2 text-xs font-semibold transition-colors hover:bg-white/70 hover:text-primary',
                     isActive && !item.href.includes('#') ? 'text-primary' : 'text-ink/75',
                   )
                 }
@@ -62,20 +56,20 @@ export function Navbar() {
           </nav>
           <div className="flex items-center gap-2">
             <Link
-              to="/contact"
-              className="focus-ring hidden rounded-full border border-primary/20 bg-white/60 px-4 py-3 text-sm font-bold text-primary backdrop-blur-2xl transition duration-500 hover:bg-white lg:inline-flex"
+              to="/contact?source=partner-with-us"
+              className="focus-ring hidden rounded-full border border-primary/20 bg-white/60 px-4 py-3 text-sm font-bold text-primary backdrop-blur-2xl transition duration-500 hover:bg-white 2xl:inline-flex"
             >
               {siteContent.common.partner}
             </Link>
             <Link
-              to="/contact"
+              to="/contact?source=book-a-service"
               className="focus-ring rounded-full bg-accent px-5 py-3 text-sm font-extrabold text-ink shadow-glow transition duration-500 hover:scale-[1.025] hover:bg-accent-strong"
             >
               {siteContent.common.book}
             </Link>
             <button
               onClick={() => setOpen(true)}
-              className="focus-ring rounded-full border border-line/70 bg-white/70 p-3 md:hidden"
+              className="focus-ring rounded-full border border-line/70 bg-white/70 p-3 xl:hidden"
               aria-label="Open navigation"
             >
               <Menu className="h-5 w-5" />

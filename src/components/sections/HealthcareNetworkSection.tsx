@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-import networkImage from '../../assets/images/optimized/network-partners.jpg';
+import networkImage from '../../assets/images/optimized/healthcare-network.jpg';
 import { networkPartners } from '../../data/company';
 import { siteContent } from '../../data/site-content';
 import { fadeUp, inViewProps, staggerFast } from '../../lib/animations';
@@ -31,7 +31,6 @@ export function HealthcareNetworkSection() {
             {content.description}
           </p>
         </motion.div>
-
         <motion.div
           {...inViewProps}
           variants={staggerFast}

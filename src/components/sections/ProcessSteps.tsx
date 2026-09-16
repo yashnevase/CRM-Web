@@ -16,7 +16,7 @@ import { SectionHeading } from '../ui/SectionHeading';
 const icons = [MessageCircleHeart, MapPinned, Activity, FileText];
 const previews = [
   ['New service request', 'Priority · Standard', 'bg-accent'],
-  ['Provider match radar', '12 accredited partners nearby', 'bg-primary'],
+  ['Provider match radar', 'Matched by location and capability', 'bg-primary'],
   ['Care team active', 'Live coordination · 04:32', 'bg-primary-dark'],
   ['Journey complete', 'MIS report ready to export', 'bg-accent'],
 ] as const;
@@ -86,7 +86,7 @@ export function ProcessSteps() {
                   Live preview
                 </p>
                 <p className="mt-1 text-sm font-bold text-primary-dark">
-                  LifeMed operations workspace
+                  {siteContent.brand.name} operations workspace
                 </p>
               </div>
               <span className="flex items-center gap-1.5 rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-700">

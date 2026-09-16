@@ -1,4 +1,5 @@
 import { AboutSection } from '../components/sections/AboutSection';
+import { AudienceSection } from '../components/sections/AudienceSection';
 import { CareProgramsSection } from '../components/sections/CareProgramsSection';
 import { CTASection } from '../components/sections/CTASection';
 import { HealthcareNetworkSection } from '../components/sections/HealthcareNetworkSection';
@@ -7,7 +8,6 @@ import { ProcessSteps } from '../components/sections/ProcessSteps';
 import { ServicesGrid } from '../components/sections/ServicesGrid';
 import { TechnologyNetworkSection } from '../components/sections/TechnologyNetworkSection';
 import { TrustStrip } from '../components/sections/TrustStrip';
-import { ValuesSection } from '../components/sections/ValuesSection';
 import { WhyChooseSection } from '../components/sections/WhyChooseSection';
 
 export function Home() {
@@ -21,7 +21,7 @@ export function Home() {
       <TechnologyNetworkSection />
       <ProcessSteps />
       <HealthcareNetworkSection />
-      <ValuesSection />
+      <AudienceSection />
       <WhyChooseSection />
       <CTASection />
     </main>

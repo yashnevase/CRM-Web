@@ -37,14 +37,14 @@ export function CTASection() {
             className="relative mt-8 flex flex-col justify-center gap-3 sm:flex-row"
           >
             <Link
-              to="/contact"
+              to="/contact?source=book-a-service"
               className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-accent px-6 text-sm font-extrabold text-ink shadow-glow transition duration-500 hover:scale-[1.025]"
             >
               {siteContent.common.book}
               <ArrowUpRight className="h-4 w-4" />
             </Link>
             <Link
-              to="/contact"
+              to="/contact?source=partner-with-us"
               className="focus-ring inline-flex min-h-12 items-center justify-center rounded-full border border-white/25 bg-white/10 px-6 text-sm font-extrabold text-white backdrop-blur-xl transition duration-500 hover:bg-white/20"
             >
               {siteContent.common.partner}

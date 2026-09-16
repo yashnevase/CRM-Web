@@ -13,13 +13,14 @@ export const supportPoints: FeatureItem[] = [
     icon: 'users',
   },
   {
-    title: 'Digitally coordinated',
-    description: 'Digital booking, allocation, tracking and service visibility.',
+    title: 'Technology enabled',
+    description: 'Digital processes that improve booking, allocation, tracking and service visibility.',
     icon: 'sparkles',
   },
   {
     title: 'Pan-India network',
-    description: 'A growing network of professionals and service partners across locations.',
+    description:
+      'Healthcare delivery supported through a growing network of professionals and service partners.',
     icon: 'network',
   },
   {
@@ -29,35 +30,98 @@ export const supportPoints: FeatureItem[] = [
   },
 ];
 
+export const corporateReasons: FeatureItem[] = [
+  {
+    title: 'Single healthcare partner',
+    description: 'Multiple healthcare requirements managed through one ecosystem.',
+    icon: 'handshake',
+  },
+  {
+    title: 'Scalable network',
+    description: 'Ability to support multiple locations and workforce sizes.',
+    icon: 'network',
+  },
+  {
+    title: 'Technology enabled',
+    description: 'Centralized visibility and service tracking.',
+    icon: 'sparkles',
+  },
+  {
+    title: 'Customized programs',
+    description: 'Solutions designed around industry and workforce requirements.',
+    icon: 'clipboard',
+  },
+  {
+    title: 'Operational support',
+    description: 'Dedicated coordination for service execution.',
+    icon: 'user-check',
+  },
+  {
+    title: 'Data and reporting',
+    description: 'Structured MIS for management visibility.',
+    icon: 'report',
+  },
+];
+
+export const individualActions: FeatureItem[] = [
+  {
+    title: 'Book a health check-up',
+    description: 'Your Healthcare. Your Convenience.',
+    icon: 'clipboard',
+  },
+  {
+    title: 'Book a home healthcare service',
+    description: 'Your Healthcare. Your Convenience.',
+    icon: 'home',
+  },
+  {
+    title: 'Book a diagnostic test',
+    description: 'Your Healthcare. Your Convenience.',
+    icon: 'flask',
+  },
+  {
+    title: 'Talk to us',
+    description: 'Your Healthcare. Your Convenience.',
+    icon: 'heart',
+  },
+];
+
 export const technologyCapabilities: FeatureItem[] = [
   {
     title: 'Digital request management',
-    description: 'Capture and organize healthcare requests digitally.',
+    description: 'Healthcare requests can be captured and managed digitally.',
     icon: 'clipboard',
   },
   {
     title: 'Provider mapping',
-    description: 'Map providers by location, specialization and capability.',
+    description:
+      'Healthcare professionals and service providers can be mapped based on location, specialization and service capability.',
     icon: 'map',
   },
   {
     title: 'Smart allocation',
-    description: 'Assign requests using clear operational parameters.',
+    description: 'Requests can be assigned based on predefined operational parameters.',
     icon: 'network',
   },
   {
     title: 'Real-time tracking',
-    description: 'Follow service status throughout the request lifecycle.',
+    description: 'Service status can be tracked across the lifecycle of the request.',
     icon: 'activity',
   },
   {
-    title: 'MIS and reporting',
-    description: 'Give clients structured service information and reports.',
+    title: 'Digital MIS and reporting',
+    description: 'Clients can access structured reports and service information.',
     icon: 'report',
   },
   {
+    title: 'Network management',
+    description: 'Manage professionals and service providers through a centralized system.',
+    icon: 'users',
+  },
+  {
     title: 'Data and analytics',
-    description: 'Turn operational data into better healthcare decisions.',
+    description:
+      'Operational data can help organizations identify trends, improve efficiency and make better healthcare decisions.',
     icon: 'chart',
   },
 ];
@@ -70,7 +134,7 @@ export const networkPartners: FeatureItem[] = [
   },
   {
     title: 'Diagnostic partners',
-    description: 'Pathology, imaging and specialized testing providers.',
+    description: 'Diagnostic providers supporting pathology, imaging and specialized tests.',
     icon: 'flask',
   },
   {
@@ -80,7 +144,7 @@ export const networkPartners: FeatureItem[] = [
   },
   {
     title: 'Corporate partners',
-    description: 'Organizations building healthier workforce programs.',
+    description: 'Organizations building healthcare programs around workforce requirements.',
     icon: 'building',
   },
 ];
@@ -93,17 +157,17 @@ export const coreValues: FeatureItem[] = [
   },
   {
     title: 'Integrity',
-    description: 'Healthcare services delivered with transparency and responsibility.',
+    description: 'We believe healthcare services must be delivered with transparency and responsibility.',
     icon: 'shield',
   },
   {
     title: 'Quality',
-    description: 'Standardized processes that support reliable service delivery.',
+    description: 'We continuously work towards standardized and reliable service delivery.',
     icon: 'badge',
   },
   {
     title: 'Technology',
-    description: 'Practical tools that simplify operations and improve visibility.',
+    description: 'We use technology to simplify healthcare operations and improve visibility.',
     icon: 'sparkles',
   },
   {
@@ -113,7 +177,7 @@ export const coreValues: FeatureItem[] = [
   },
   {
     title: 'Accountability',
-    description: 'Ownership of every service and responsibility entrusted to us.',
+    description: 'We take ownership of every service entrusted to us.',
     icon: 'user-check',
   },
 ];
@@ -131,7 +195,8 @@ export const whyChooseUs: FeatureItem[] = [
   },
   {
     title: 'Pan-India capability',
-    description: 'A network-led model helps coordinate care across locations.',
+    description:
+      'Our network-driven model allows healthcare services to be coordinated across multiple locations.',
     icon: 'map',
   },
   {
@@ -141,12 +206,12 @@ export const whyChooseUs: FeatureItem[] = [
   },
   {
     title: 'Client focused',
-    description: 'Programs are shaped around personal and organizational needs.',
+    description: 'Solutions are designed around the specific requirements of customers and organizations.',
     icon: 'user-check',
   },
   {
     title: 'Healthcare expertise',
-    description: 'Healthcare knowledge is supported by technology and operations.',
+    description: 'Our approach combines healthcare knowledge with technology and operational capabilities.',
     icon: 'stethoscope',
   },
 ];

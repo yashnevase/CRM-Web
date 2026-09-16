@@ -1,14 +1,5 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
-import {
-  ArrowUpRight,
-  Building2,
-  Check,
-  HeartPulse,
-  MapPinned,
-  Network,
-  ShieldCheck,
-} from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowUpRight, Building2, HeartPulse, MapPinned, Network, ShieldCheck } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import heroImage from '../../assets/images/optimized/hero-healthcare-professional.jpg';
@@ -20,16 +11,6 @@ import { ServiceIcon } from '../ui/ServiceIcon';
 
 export function Hero() {
   const content = siteContent.hero;
-  const [audience, setAudience] = useState<'Individuals' | 'Corporates' | 'Insurers'>(
-    'Individuals',
-  );
-  const audienceCopy = {
-    Individuals: 'Personalised support, diagnostics and care at home—coordinated around you.',
-    Corporates:
-      'Preventive programmes, workforce wellbeing and clear reporting for every location.',
-    Insurers:
-      'Reliable provider coordination and structured visibility across every claim journey.',
-  } as const;
 
   return (
     <section
@@ -44,7 +25,7 @@ export function Hero() {
           <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
             <motion.p
               variants={fadeUp}
-              className="max-w-sm text-xs font-extrabold uppercase text-primary-dark/70"
+              className="max-w-sm text-xs font-extrabold uppercase text-ink/076 sm:text-sm"
             >
               {content.eyebrow}
             </motion.p>
@@ -54,12 +35,14 @@ export function Hero() {
               variants={fadeUp}
               className="mt-5 max-w-4xl text-5xl font-black leading-none text-primary-dark sm:text-6xl lg:text-7xl"
             >
-              <span>{content.title} </span>
-              <span className="text-accent">{content.titleAccent}</span>
+              <span>{content.title}</span>
+              {content.titleAccent ? (
+                <span className="text-accent"> {content.titleAccent}</span>
+              ) : null}
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className="mt-4 max-w-3xl font-display text-2xl font-bold leading-tight text-ink sm:text-3xl lg:text-4xl"
+              className="mt-4 max-w-3xl font-display text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl text-accent-strong"
             >
               {content.accent}
             </motion.p>
@@ -70,43 +53,7 @@ export function Hero() {
             >
               {content.description}
             </motion.p>
-            <motion.div variants={fadeUp} className="mt-6">
-              <div
-                className="inline-flex rounded-full border border-primary/15 bg-white/65 p-1 shadow-card backdrop-blur-xl"
-                role="tablist"
-                aria-label="Choose your audience"
-              >
-                {(Object.keys(audienceCopy) as Array<keyof typeof audienceCopy>).map((item) => (
-                  <button
-                    key={item}
-                    type="button"
-                    role="tab"
-                    aria-selected={audience === item}
-                    onClick={() => setAudience(item)}
-                    className={`focus-ring rounded-full px-3 py-2 text-xs font-extrabold transition sm:px-4 ${audience === item ? 'bg-primary-dark text-white shadow-glow' : 'text-primary-dark/70 hover:bg-primary-soft/60'}`}
-                  >
-                    For {item}
-                  </button>
-                ))}
-              </div>
-              <div className="relative mt-3 min-h-7 max-w-xl text-sm font-semibold text-primary-dark/75">
-                <AnimatePresence mode="wait">
-                  <motion.p
-                    key={audience}
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    {audienceCopy[audience]}
-                  </motion.p>
-                </AnimatePresence>
-              </div>
-            </motion.div>
-            <motion.p
-              variants={fadeUp}
-              className="mt-4 hidden max-w-2xl text-sm leading-7 text-muted sm:block"
-            >
+            <motion.p variants={fadeUp} className="mt-4 max-w-2xl text-sm leading-7 text-muted">
               {content.supportingText}
             </motion.p>
 
@@ -119,24 +66,12 @@ export function Hero() {
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
               <Link
-                to="/contact"
+                to="/contact?source=partner-with-us"
                 className="focus-ring inline-flex min-h-12 items-center justify-center rounded-full border border-primary/18 bg-white px-6 py-3.5 text-sm font-extrabold text-primary-dark shadow-card backdrop-blur-xl transition duration-500 hover:-translate-y-0.5 hover:border-primary/30"
               >
                 {siteContent.common.partner}
               </Link>
             </motion.div>
-
-            <motion.ul variants={fadeUp} className="mt-9 hidden flex-wrap gap-3 sm:flex">
-              {content.features.map((feature) => (
-                <li
-                  key={feature}
-                  className="flex items-center gap-2 rounded-full border border-primary/10 bg-white/[.46] px-3.5 py-2 text-xs font-bold text-ink/75 backdrop-blur-lg"
-                >
-                  <Check className="h-3.5 w-3.5 text-primary" />
-                  {feature}
-                </li>
-              ))}
-            </motion.ul>
           </motion.div>
 
           <motion.div
@@ -193,7 +128,7 @@ export function Hero() {
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
-          className="mt-10 grid grid-cols-3 gap-2 sm:gap-4 lg:-mt-2 lg:max-w-[86%]"
+          className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4 lg:mt-14 lg:max-w-[86%]"
         >
           {content.serviceTiles.map((tile, index) => (
             <motion.div

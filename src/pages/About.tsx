@@ -8,7 +8,7 @@ export function About() {
   return (
     <main>
       <PageHero {...siteContent.pages.about} />
-      <AboutSection />
+      <AboutSection detailed />
       <ValuesSection />
       <CTASection />
     </main>

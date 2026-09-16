@@ -6,7 +6,11 @@ import { siteContent } from '../../data/site-content';
 import { fadeUp, inViewProps, staggerFast } from '../../lib/animations';
 import { MediaPlaceholder } from '../ui/MediaPlaceholder';
 
-export function AboutSection() {
+interface AboutSectionProps {
+  detailed?: boolean;
+}
+
+export function AboutSection({ detailed = false }: AboutSectionProps) {
   const content = siteContent.about;
 
   return (
@@ -69,25 +73,48 @@ export function AboutSection() {
               to="/about"
               className="group focus-ring inline-flex items-center gap-2 rounded-xl text-sm font-extrabold text-primary"
             >
-              Learn more about LifeMed Connect
+              Learn more about {siteContent.brand.name}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </motion.div>
         </motion.div>
       </div>
 
-      <motion.div
-        {...inViewProps}
-        variants={staggerFast}
-        className="page-shell mt-12 grid gap-5 md:grid-cols-2 lg:mt-14"
-      >
-        <PurposeCard icon={Target} title={content.mission.title} text={content.mission.text} />
-        <PurposeCard
-          icon={HeartHandshake}
-          title={content.vision.title}
-          text={content.vision.text}
-        />
-      </motion.div>
+      {detailed && (
+        <motion.div
+          {...inViewProps}
+          variants={staggerFast}
+          className="page-shell mt-12 grid gap-5 md:grid-cols-2 lg:mt-14"
+        >
+          <PurposeCard icon={Target} title={content.mission.title} text={content.mission.text} />
+          <PurposeCard
+            icon={HeartHandshake}
+            title={content.vision.title}
+            text={content.vision.text}
+          />
+        </motion.div>
+      )}
+      {detailed && (
+        <motion.div
+          {...inViewProps}
+          variants={staggerFast}
+          className="page-shell mt-5 grid gap-3 md:grid-cols-3"
+        >
+          {content.principles.map((principle, index) => (
+            <motion.article
+              key={principle.title}
+              variants={fadeUp}
+              className="group relative overflow-hidden rounded-2xl border border-primary/20 bg-primary/[0.035] p-5 shadow-[0_4px_18px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:bg-primary/[0.055] hover:shadow-[0_14px_32px_rgba(15,23,42,0.12)]"
+            >
+              <p className="text-[10px] font-black uppercase tracking-[.16em] text-primary">
+                Principle {index + 1}
+              </p>
+              <h3 className="mt-3 text-lg font-bold text-primary-dark">{principle.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted">{principle.text}</p>
+            </motion.article>
+          ))}
+        </motion.div>
+      )}
     </section>
   );
 }
