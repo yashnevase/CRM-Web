@@ -3,6 +3,27 @@ import { footerNavigation } from '../../data/navigation';
 import { siteContent } from '../../data/site-content';
 import { BrandLogo } from '../ui/BrandLogo';
 
+const destinations: Record<string, string> = {
+  'About us': '/about',
+  'Our services': '/services',
+  Technology: '/network-technology#technology',
+  'Healthcare network': '/network-technology',
+  'Health check-ups': '/services#clipboard',
+  Diagnostics: '/services#flask',
+  'Home healthcare': '/home-healthcare',
+  'Corporate healthcare': '/corporate-healthcare',
+  'Occupational health': '/corporate-healthcare#activity',
+  'Medical manpower': '/corporate-healthcare#building',
+  'Contact us': '/contact',
+};
+const pendingContent = new Set([
+  'Careers',
+  'FAQs',
+  'Privacy policy',
+  'Terms and conditions',
+  'Cancellation and refund policy',
+]);
+
 export function Footer() {
   return (
     <footer className="bg-primary-dark pt-14 text-white">
@@ -55,9 +76,16 @@ function FooterColumn({ title, links, to }: { title: string; links: string[]; to
       <ul className="mt-5 space-y-3 text-sm text-white/82">
         {links.map((item) => (
           <li key={item}>
-            <Link to={to} className="transition-colors hover:text-white">
-              {item}
-            </Link>
+            {pendingContent.has(item) ? (
+              <span className="inline-flex min-h-6 items-center text-white/80">{item}</span>
+            ) : (
+              <Link
+                to={destinations[item] ?? `${to}?source=${encodeURIComponent(item)}`}
+                className="inline-flex min-h-6 items-center transition-colors hover:text-white"
+              >
+                {item}
+              </Link>
+            )}
           </li>
         ))}
       </ul>

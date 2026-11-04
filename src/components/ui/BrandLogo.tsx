@@ -32,7 +32,7 @@ export function BrandLogo({ inverse = false, compact = false, className }: Brand
           <span
             className={cn(
               'mt-1 block text-[9px] font-bold uppercase tracking-[.15em]',
-              inverse ? 'text-white/65' : 'text-muted',
+              inverse ? 'text-white/90' : 'text-muted',
             )}
           >
             {siteContent.brand.shortDescriptor}

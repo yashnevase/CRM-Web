@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, LockKeyhole, Radio } from 'lucide-react';
-import dashboardImage from '../../assets/images/optimized/technology-dashboard.jpg';
+import dashboardImage from '../../assets/images/optimized/technology-dashboard.webp';
 import { technologyCapabilities } from '../../data/company';
 import { siteContent } from '../../data/site-content';
 import { fadeUp, inViewProps, staggerFast } from '../../lib/animations';

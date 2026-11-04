@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, Building2, HeartPulse, MapPinned, Network, ShieldCheck } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import heroImage from '../../assets/images/optimized/hero-healthcare-professional.jpg';
+import heroImage from '../../assets/images/optimized/hero-healthcare-professional.webp';
 import { siteContent } from '../../data/site-content';
 import { fadeUp, staggerContainer } from '../../lib/animations';
 import { GlassCard } from '../ui/GlassCard';
@@ -141,7 +141,13 @@ export function Hero() {
               }`}
             >
               <Link
-                to={index === 1 ? '/#home-care' : index === 2 ? '/#corporate' : '/services'}
+                to={
+                  index === 1
+                    ? '/home-healthcare'
+                    : index === 2
+                      ? '/corporate-healthcare'
+                      : '/services#clipboard'
+                }
                 className="absolute inset-0 z-20 rounded-3xl focus-ring"
                 aria-label={`View ${tile}`}
               />

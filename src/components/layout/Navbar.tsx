@@ -31,11 +31,7 @@ export function Navbar() {
         className="fixed inset-x-0 top-0 z-50 border-b border-white/50 backdrop-blur-2xl"
       >
         <div className="page-shell flex h-[82px] items-center justify-between">
-          <Link
-            to="/"
-            className="focus-ring flex items-center rounded-xl"
-            aria-label={`${siteContent.brand.name} home`}
-          >
+          <Link to="/" className="focus-ring flex items-center rounded-xl">
             <BrandLogo />
           </Link>
           <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Primary navigation">

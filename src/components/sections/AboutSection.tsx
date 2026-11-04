@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Check, HeartHandshake, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import aboutImage from '../../assets/images/optimized/about-care-coordination.jpg';
+import aboutImage from '../../assets/images/optimized/about-care-coordination.webp';
 import { siteContent } from '../../data/site-content';
 import { fadeUp, inViewProps, staggerFast } from '../../lib/animations';
 import { MediaPlaceholder } from '../ui/MediaPlaceholder';

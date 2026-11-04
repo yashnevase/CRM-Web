@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-import networkImage from '../../assets/images/optimized/healthcare-network.jpg';
+import networkImage from '../../assets/images/optimized/healthcare-network.webp';
 import { networkPartners } from '../../data/company';
 import { siteContent } from '../../data/site-content';
 import { fadeUp, inViewProps, staggerFast } from '../../lib/animations';

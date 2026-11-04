@@ -2,9 +2,9 @@ export const navigation = [
   { label: 'Home', href: '/' },
   { label: 'About us', href: '/about' },
   { label: 'Our services', href: '/services' },
-  { label: 'Healthcare', href: '/#corporate' },
-  { label: 'Healthcare network', href: '/#network' },
-  { label: 'Technology', href: '/#technology' },
+  { label: 'Home healthcare', href: '/home-healthcare' },
+  { label: 'Corporate healthcare', href: '/corporate-healthcare' },
+  { label: 'Network & technology', href: '/network-technology' },
   { label: 'Contact us', href: '/contact' },
 ];
 

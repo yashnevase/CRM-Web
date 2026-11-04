@@ -54,8 +54,7 @@ export function ProcessSteps() {
                 <li key={step.number}>
                   <button
                     type="button"
-                    role="tab"
-                    aria-selected={active === index}
+                    aria-pressed={active === index}
                     onClick={() => setActive(index)}
                     className={`focus-ring flex w-full items-center gap-4 rounded-2xl p-4 text-left transition ${active === index ? 'bg-white text-primary-dark shadow-glass' : 'text-white/75 hover:bg-white/10 hover:text-white'}`}
                   >

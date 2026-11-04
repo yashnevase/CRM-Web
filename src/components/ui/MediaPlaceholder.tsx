@@ -28,6 +28,7 @@ export function MediaPlaceholder({
         height="900"
         className={cn('object-cover', className)}
         loading={loading}
+        decoding="async"
       />
     );
   }

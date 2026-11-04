@@ -1,10 +1,10 @@
 import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import corporateImage from '../../assets/images/optimized/corporate-healthcare.jpg';
-import diagnosticsImage from '../../assets/images/optimized/diagnostic-lab.jpg';
-import preventiveImage from '../../assets/images/optimized/preventive-health-checkup.jpg';
-import homeCareImage from '../../assets/images/optimized/home-healthcare.jpg';
+import corporateImage from '../../assets/images/optimized/corporate-healthcare.webp';
+import diagnosticsImage from '../../assets/images/optimized/diagnostic-lab.webp';
+import preventiveImage from '../../assets/images/optimized/preventive-health-checkup.webp';
+import homeCareImage from '../../assets/images/optimized/home-healthcare.webp';
 import { services, type ServiceItem } from '../../data/services';
 import { siteContent } from '../../data/site-content';
 import { fadeUp, inViewProps, staggerFast } from '../../lib/animations';
@@ -116,7 +116,15 @@ function ServiceCard({ service }: { service: ServiceItem }) {
             {service.description}
           </p>
           <Link
-            to="/contact"
+            to={
+              service.icon === 'home'
+                ? '/home-healthcare'
+                : service.icon === 'building'
+                  ? '/corporate-healthcare'
+                  : service.icon === 'network'
+                    ? '/network-technology'
+                    : `/services#${service.icon}`
+            }
             className="focus-ring mt-5 inline-flex items-center gap-2 rounded-lg text-sm font-bold"
           >
             {siteContent.services.cardLink}
