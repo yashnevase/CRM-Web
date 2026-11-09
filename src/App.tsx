@@ -39,6 +39,12 @@ export default function App() {
   }, [location]);
   return (
     <>
+      <a
+        href="#main-content"
+        className="focus-ring fixed left-4 top-3 z-[70] -translate-y-20 rounded-full bg-primary-dark px-4 py-2 text-sm font-bold text-white transition focus:translate-y-0"
+      >
+        Skip to content
+      </a>
       <Navbar />
       <Suspense
         fallback={
@@ -47,15 +53,17 @@ export default function App() {
           </main>
         }
       >
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/home-healthcare" element={<Healthcare />} />
-          <Route path="/corporate-healthcare" element={<Healthcare corporate />} />
-          <Route path="/network-technology" element={<NetworkTechnology />} />
-        </Routes>
+        <div id="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/home-healthcare" element={<Healthcare />} />
+            <Route path="/corporate-healthcare" element={<Healthcare corporate />} />
+            <Route path="/network-technology" element={<NetworkTechnology />} />
+          </Routes>
+        </div>
       </Suspense>
       <Footer />
     </>

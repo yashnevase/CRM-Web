@@ -12,7 +12,7 @@ export function BrandLogo({ inverse = false, compact = false, className }: Brand
     <span
       className={cn(
         'inline-flex items-center rounded-2xl',
-        inverse && 'bg-white/80 p-2 backdrop-blur-sm',
+        inverse && 'border border-white/80 bg-white/75 p-3 backdrop-blur-sm',
         className,
       )}
     >

@@ -41,7 +41,7 @@ const fields = [
     name: 'city',
     type: 'text',
     autoComplete: 'address-level2',
-    required: true,
+    required: false,
     placeholder: 'Your city',
   },
 ] as const;
