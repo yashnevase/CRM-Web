@@ -34,6 +34,17 @@ export function Footer() {
             <p className="mt-6 text-xs font-extrabold uppercase text-accent-soft">
               Technology-Enabled Healthcare | Trusted Medical Services | Care Delivered Everywhere
             </p>
+            <div className="mt-5 space-y-2 text-sm text-white/85">
+              <a className="block hover:text-accent" href="tel:+918530201888">
+                +91 85302 01888
+              </a>
+              <a
+                className="block break-all hover:text-accent"
+                href="mailto:medical.reports@lifemedconnect.com"
+              >
+                medical.reports@lifemedconnect.com
+              </a>
+            </div>
           </div>
           <FooterColumn
             title={siteContent.footer.headings.company}

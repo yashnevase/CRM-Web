@@ -5,6 +5,11 @@ export const siteContent = {
     descriptor: 'Connecting Healthcare. Delivering Better Care.',
     shortDescriptor: 'Connecting Healthcare. Delivering Better Care.',
   },
+  contact: {
+    email: 'medical.reports@lifemedconnect.com',
+    phone: '8530201888',
+    phoneDisplay: '+91 85302 01888',
+  },
   common: {
     book: 'Book a Service',
     partner: 'Partner With Us',

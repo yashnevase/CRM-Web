@@ -99,6 +99,20 @@ export function Contact() {
                   </div>
                 ))}
               </div>
+              <div className="mt-8 border-t border-white/15 pt-6 text-sm">
+                <a
+                  className="block font-semibold text-white hover:text-accent"
+                  href={`tel:+91${siteContent.contact.phone}`}
+                >
+                  {siteContent.contact.phoneDisplay}
+                </a>
+                <a
+                  className="mt-2 block break-all text-white/85 hover:text-accent"
+                  href={`mailto:${siteContent.contact.email}`}
+                >
+                  {siteContent.contact.email}
+                </a>
+              </div>
             </div>
           </div>
 
