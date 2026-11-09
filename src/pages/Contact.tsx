@@ -68,6 +68,35 @@ export function Contact() {
   const leadSource = searchParams.get('source') ?? 'contact-us';
   const leadDateTime = new Date().toISOString();
 
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const details = [
+      'VITALSYM HEALTHCARE — NEW ENQUIRY',
+      '=================================',
+      '',
+      `Service requested: ${formData.get('service') ?? 'General enquiry'}`,
+      `Received: ${new Date().toLocaleString()}`,
+      `Source: ${leadSource}`,
+      '',
+      'CONTACT DETAILS',
+      '---------------',
+      `Name: ${formData.get('name') ?? ''}`,
+      `Company: ${formData.get('company') || 'Not provided'}`,
+      `Email: ${formData.get('email') ?? ''}`,
+      `Mobile: ${formData.get('mobile') ?? ''}`,
+      `City: ${formData.get('city') || 'Not provided'}`,
+      '',
+      'MESSAGE',
+      '-------',
+      String(formData.get('message') || 'No message provided'),
+      '',
+      'Please follow up with the enquirer using the contact details above.',
+    ].join('\n');
+    const subject = `New VitalSym enquiry — ${formData.get('service') ?? 'General enquiry'}`;
+    window.location.href = `mailto:${siteContent.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(details)}`;
+  }
+
   return (
     <main>
       <PageHero {...siteContent.pages.contact} />
@@ -118,7 +147,7 @@ export function Contact() {
 
           {/* Enquiry form */}
           <form
-            onSubmit={(event) => event.preventDefault()}
+            onSubmit={handleSubmit}
             className="rounded-3xl border border-line bg-white p-6 shadow-[0_18px_45px_rgba(8,91,103,0.10)] sm:p-8"
           >
             <h2 className="text-xl font-bold tracking-tight sm:text-2xl">Submit an enquiry</h2>
@@ -181,6 +210,9 @@ export function Contact() {
               Submit Enquiry
               <ArrowUpRight className="h-4 w-4" />
             </button>
+            <p className="mt-3 text-xs leading-5 text-muted">
+              Your email app will open with the enquiry details ready to review and send.
+            </p>
           </form>
         </div>
       </section>
